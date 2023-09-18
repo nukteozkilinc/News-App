@@ -11,7 +11,6 @@ class HomePageTableViewCell: UITableViewCell {
     
     
     @IBOutlet weak var pressedSave: UIButton!
-    var selectedNews: Articles?
     lazy var viewmodel: HomePageViewModelInterface = HomePageViewModel()
     
     @IBOutlet weak var lblTitle: UILabel! {
@@ -42,12 +41,6 @@ class HomePageTableViewCell: UITableViewCell {
     
     @IBAction func pressedSave(_ sender: UIButton) {
         
-        if selectedNews?.isLiked == 0 || selectedNews?.isLiked == nil {
-            selectedNews?.isLiked = 1
-            viewmodel.saveNews(selectedNews: selectedNews)
-        } else {
-            print("SILINDI")
-            selectedNews?.isLiked = 0
-        }
+
     }
 }

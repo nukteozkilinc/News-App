@@ -18,16 +18,10 @@
 		8B4C59EF2AB8425800BAAE34 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8B4C59EE2AB8425800BAAE34 /* RxSwift */; };
 		8B4C59F12AB8432000BAAE34 /* SavePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4C59F02AB8432000BAAE34 /* SavePageViewController.swift */; };
 		8B4C59F62AB8438100BAAE34 /* SavePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4C59F52AB8438100BAAE34 /* SavePageViewModel.swift */; };
-		8B4C59F92AB845A900BAAE34 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B4C59F82AB845A900BAAE34 /* libsqlite3.tbd */; };
 		8B55A6952AB10A5E006796C9 /* HomePageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B55A6942AB10A5E006796C9 /* HomePageTableViewCell.swift */; };
 		8B568FF62AB77F4800CC04DF /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B568FF52AB77F4800CC04DF /* RegisterViewModel.swift */; };
-		8B5690082AB78B2E00CC04DF /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B5690002AB78B2E00CC04DF /* FMDatabaseAdditions.m */; };
-		8B5690092AB78B2E00CC04DF /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B5690032AB78B2E00CC04DF /* FMDatabase.m */; };
-		8B56900A2AB78B2E00CC04DF /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B5690042AB78B2E00CC04DF /* FMDatabasePool.m */; };
-		8B56900B2AB78B2E00CC04DF /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B5690052AB78B2E00CC04DF /* FMDatabaseQueue.m */; };
-		8B56900C2AB78B2E00CC04DF /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B5690062AB78B2E00CC04DF /* FMResultSet.m */; };
 		8B5690102AB7BADC00CC04DF /* Database Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B56900F2AB7BADC00CC04DF /* Database Layer.swift */; };
-		8B6472082AB877EB00FFF774 /* news.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 8B6472072AB877EB00FFF774 /* news.sqlite */; };
+		8B64720B2AB8AC6300FFF774 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B6472092AB8AC6300FFF774 /* Model.xcdatamodeld */; };
 		8B9A015E2AB5085500317C77 /* Firebase Auth .swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9A015D2AB5085500317C77 /* Firebase Auth .swift */; };
 		8B9A01612AB50C7F00317C77 /* RegisterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9A01602AB50C7F00317C77 /* RegisterPageViewController.swift */; };
 		8BB2843F2AAF6B02006C8FF7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8BB2843E2AAF6B02006C8FF7 /* Alamofire */; };
@@ -59,24 +53,10 @@
 		8B27E35C2AAF434E000C69E6 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		8B4C59F02AB8432000BAAE34 /* SavePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavePageViewController.swift; sourceTree = "<group>"; };
 		8B4C59F52AB8438100BAAE34 /* SavePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavePageViewModel.swift; sourceTree = "<group>"; };
-		8B4C59F82AB845A900BAAE34 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		8B55A6942AB10A5E006796C9 /* HomePageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageTableViewCell.swift; sourceTree = "<group>"; };
 		8B568FF52AB77F4800CC04DF /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
-		8B568FFC2AB78B2E00CC04DF /* News App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "News App-Bridging-Header.h"; sourceTree = "<group>"; };
-		8B568FFD2AB78B2E00CC04DF /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
-		8B568FFE2AB78B2E00CC04DF /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
-		8B568FFF2AB78B2E00CC04DF /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
-		8B5690002AB78B2E00CC04DF /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
-		8B5690012AB78B2E00CC04DF /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
-		8B5690022AB78B2E00CC04DF /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
-		8B5690032AB78B2E00CC04DF /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
-		8B5690042AB78B2E00CC04DF /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
-		8B5690052AB78B2E00CC04DF /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
-		8B5690062AB78B2E00CC04DF /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
-		8B5690072AB78B2E00CC04DF /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
-		8B56900D2AB7B8EF00CC04DF /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		8B56900F2AB7BADC00CC04DF /* Database Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Database Layer.swift"; sourceTree = "<group>"; };
-		8B6472072AB877EB00FFF774 /* news.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = news.sqlite; sourceTree = "<group>"; };
+		8B64720A2AB8AC6300FFF774 /* NewsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NewsModel.xcdatamodel; sourceTree = "<group>"; };
 		8B9A015D2AB5085500317C77 /* Firebase Auth .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firebase Auth .swift"; sourceTree = "<group>"; };
 		8B9A01602AB50C7F00317C77 /* RegisterPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageViewController.swift; sourceTree = "<group>"; };
 		8BBD74902AB5C75000777A9D /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
@@ -102,7 +82,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B4C59F92AB845A900BAAE34 /* libsqlite3.tbd in Frameworks */,
 				8BB2843F2AAF6B02006C8FF7 /* Alamofire in Frameworks */,
 				8B4C59EF2AB8425800BAAE34 /* RxSwift in Frameworks */,
 				8BF9F6162AB49B7C00B613E8 /* FirebaseAuth in Frameworks */,
@@ -268,8 +247,6 @@
 		8BB2843D2AAF6B02006C8FF7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8B4C59F82AB845A900BAAE34 /* libsqlite3.tbd */,
-				8B56900D2AB7B8EF00CC04DF /* libsqlite3.0.tbd */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -294,6 +271,7 @@
 		8BEA83112AA8A11B00BEC145 /* News App */ = {
 			isa = PBXGroup;
 			children = (
+				8B6472092AB8AC6300FFF774 /* Model.xcdatamodeld */,
 				8B568FFB2AB7862800CC04DF /* Save Page */,
 				8B9A015F2AB50C6C00317C77 /* Register Page */,
 				8B9A015C2AB5081100317C77 /* Network */,
@@ -310,19 +288,6 @@
 				8BEA831D2AA8A11C00BEC145 /* LaunchScreen.storyboard */,
 				8BEA83202AA8A11C00BEC145 /* Info.plist */,
 				8BF9F6122AB4989D00B613E8 /* GoogleService-Info.plist */,
-				8B6472072AB877EB00FFF774 /* news.sqlite */,
-				8B568FFF2AB78B2E00CC04DF /* FMDatabase.h */,
-				8B5690032AB78B2E00CC04DF /* FMDatabase.m */,
-				8B568FFD2AB78B2E00CC04DF /* FMDatabaseAdditions.h */,
-				8B5690002AB78B2E00CC04DF /* FMDatabaseAdditions.m */,
-				8B568FFE2AB78B2E00CC04DF /* FMDatabasePool.h */,
-				8B5690042AB78B2E00CC04DF /* FMDatabasePool.m */,
-				8B5690072AB78B2E00CC04DF /* FMDatabaseQueue.h */,
-				8B5690052AB78B2E00CC04DF /* FMDatabaseQueue.m */,
-				8B5690012AB78B2E00CC04DF /* FMDB.h */,
-				8B5690022AB78B2E00CC04DF /* FMResultSet.h */,
-				8B5690062AB78B2E00CC04DF /* FMResultSet.m */,
-				8B568FFC2AB78B2E00CC04DF /* News App-Bridging-Header.h */,
 			);
 			path = "News App";
 			sourceTree = "<group>";
@@ -435,7 +400,6 @@
 			files = (
 				8BEA831F2AA8A11C00BEC145 /* LaunchScreen.storyboard in Resources */,
 				8BF9F6132AB4989D00B613E8 /* GoogleService-Info.plist in Resources */,
-				8B6472082AB877EB00FFF774 /* news.sqlite in Resources */,
 				8BEA831C2AA8A11C00BEC145 /* Assets.xcassets in Resources */,
 				8BEA831A2AA8A11B00BEC145 /* Main.storyboard in Resources */,
 			);
@@ -461,15 +425,11 @@
 				8BEA83282AA8C6DA00BEC145 /* UIView+Extensions.swift in Sources */,
 				8B4C59F12AB8432000BAAE34 /* SavePageViewController.swift in Sources */,
 				8BEA83152AA8A11B00BEC145 /* SceneDelegate.swift in Sources */,
-				8B5690082AB78B2E00CC04DF /* FMDatabaseAdditions.m in Sources */,
 				8BBD74912AB5C75000777A9D /* Alerts.swift in Sources */,
-				8B56900A2AB78B2E00CC04DF /* FMDatabasePool.m in Sources */,
 				8B27E3522AAEFE15000C69E6 /* HomePageViewController.swift in Sources */,
 				8B27E3542AAEFE24000C69E6 /* HomePageViewModel.swift in Sources */,
-				8B56900C2AB78B2E00CC04DF /* FMResultSet.m in Sources */,
+				8B64720B2AB8AC6300FFF774 /* Model.xcdatamodeld in Sources */,
 				8B9A015E2AB5085500317C77 /* Firebase Auth .swift in Sources */,
-				8B5690092AB78B2E00CC04DF /* FMDatabase.m in Sources */,
-				8B56900B2AB78B2E00CC04DF /* FMDatabaseQueue.m in Sources */,
 				8B27E3572AAF29E4000C69E6 /* Network Layer.swift in Sources */,
 				8B568FF62AB77F4800CC04DF /* RegisterViewModel.swift in Sources */,
 				8B1AC3FC2AB1D27600E5B271 /* DetailPageViewModel.swift in Sources */,
@@ -640,7 +600,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.info.News-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "News App/News App-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -670,7 +629,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.info.News-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "News App/News App-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -743,6 +701,19 @@
 			productName = FirebaseAuth;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		8B6472092AB8AC6300FFF774 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8B64720A2AB8AC6300FFF774 /* NewsModel.xcdatamodel */,
+			);
+			currentVersion = 8B64720A2AB8AC6300FFF774 /* NewsModel.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8BEA83072AA8A11B00BEC145 /* Project object */;
 }

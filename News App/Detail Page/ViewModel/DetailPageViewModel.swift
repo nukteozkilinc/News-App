@@ -9,6 +9,7 @@ import UIKit
 
 protocol DetailPageViewModelInterface {
     var view: DetailPageViewInterface? { get set }
+    func savedNews()
 }
 
 class DetailPageViewModel {
@@ -16,5 +17,9 @@ class DetailPageViewModel {
 }
 
 extension DetailPageViewModel: DetailPageViewModelInterface {
+    func savedNews() {
+            DatabaseManager.shared.saveNews(author: "news.author", content: "news.content", description: "news.description", isLiked: true, publishedAt: "news.publishedAt", title: "news.title")
+    }
+    
     
 }

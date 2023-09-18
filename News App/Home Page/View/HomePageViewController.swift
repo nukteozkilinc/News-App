@@ -45,7 +45,6 @@ extension HomePageViewController: UITableViewDelegate, UITableViewDataSource{
         //cell.imgNew.image = UIImage(data: viewModel.fetchImages(article: viewModel.articles[indexPath.row]))
         //viewModel.fetchImages(article: viewModel.articles[indexPath.row])
         
-        cell.selectedNews = viewModel.articles[indexPath.row]
         return cell
     }
     

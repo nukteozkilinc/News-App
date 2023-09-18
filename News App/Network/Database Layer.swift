@@ -7,58 +7,50 @@
 
 import Foundation
 import RxSwift
+import CoreData
 
 class DatabaseManager {
     
+    var newsList = BehaviorSubject<[NewsModel]>(value: [NewsModel]())
+    
+    let context = appDelegate.persistentContainer.viewContext
+    
     static let shared = DatabaseManager()
     
-    var newsList = BehaviorSubject<[Articles]>(value: [Articles]())
-    let db: FMDatabase?
-    
-    init() {
-//        let filePath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
-//        let veritabaniURL = URL(fileURLWithPath: filePath).appendingPathComponent("news.sqlite")
-//        db = FMDatabase(path: veritabaniURL.path)
-        let databaseFilePath = Bundle.main.path(forResource: "news", ofType: "sqlite")!
-        db = FMDatabase(path: databaseFilePath)
+    func saveNews(author: String, content: String, description: String, isLiked: Bool, publishedAt: String, title: String) {
+        //let news = NewsModel(context: context)
+        
+        let entity = NSEntityDescription.entity(forEntityName: "NewsModel", in: context)
+        let news = NSManagedObject(entity: entity!, insertInto: context)
+        
+        news.setValue(author, forKey: "author")
+        news.setValue(content, forKey: "content")
+        news.setValue(title, forKey: "title")
+        news.setValue(publishedAt, forKey: "publishedAt")
+        news.setValue(isLiked, forKey: "isLiked")
+        news.setValue(description, forKey: "descrip")
+        
+        appDelegate.saveContext()
     }
     
-    func saveNews(news: Articles) {
-        db?.open()
+    func deleteNews(news: NewsModel) {
         
-        do {
-            try db!.executeUpdate("INSERT INTO news (author,title,description,content,publishedAt,isLiked) VALUES (?,?)", values: [news.author!,news.title!,news.description!,news.content!,news.publishedAt!,news.isLiked!])
-            
-            print("SAVED \(news.author!)")
-        } catch {
-            print(error.localizedDescription)
-        }
-        db?.close()
     }
     
     func fetchSavedNews() {
         
-        db?.open()
-        var list = [Articles]()
-        
-        do {
-            let result = try db!.executeQuery("SELECT * FROM news", values: nil)
-            while result.next() {
-                let news_id = Int(result.string(forColumn: "news_id"))!
-                let author = result.string(forColumn: "author")
-                let title = result.string(forColumn: "title")
-                let description = result.string(forColumn: "description")
-                let content = result.string(forColumn: "content")
-                let publishedAt = result.string(forColumn: "publishedAt")
-                let isLiked = Int(result.string(forColumn: "isLiked"))
-                
-                let news = Articles(news_id: news_id, author: author, title: title, description: description, publishedAt: publishedAt, content: content, isLiked: isLiked)
-                list.append(news)
-            }
-            newsList.onNext(list)
-            print(list)
-        } catch {
-            print(error.localizedDescription)
-        }
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "NewsModel")
+                //request.predicate = NSPredicate(format: "age = %@", "12")
+                request.returnsObjectsAsFaults = false
+                do {
+                    let result = try context.fetch(request)
+                    for data in result as! [NSManagedObject] {
+                       print(data.value(forKey: "author") as! String)
+                  }
+                    
+                } catch {
+                    
+                    print("Failed")
+                }
     }
 }

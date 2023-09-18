@@ -15,7 +15,6 @@ protocol HomePageViewModelInterface{
     func fetchImages(article: Articles)
     func goToDetailPage()
     func searchNews(search: String)
-    func saveNews(selectedNews: Articles?)
 }
 
 final class HomePageViewModel {
@@ -62,10 +61,5 @@ extension HomePageViewModel: HomePageViewModelInterface {
     func fetchImages(article: Articles){
         //NetworkManager.shared.downloadImage(from: article.urlToImage!)
         
-    }
-    
-    func saveNews(selectedNews: Articles?) {
-        //DatabaseManager.shared.saveNews(news: selectedNews!)
-        print("KAYDEDILDI")
     }
 }

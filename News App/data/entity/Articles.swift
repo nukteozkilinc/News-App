@@ -8,7 +8,6 @@
 import Foundation
 
 struct Articles: Codable{
-    var news_id: Int?
     var author: String?
     var title: String?
     var description: String?
@@ -16,6 +15,6 @@ struct Articles: Codable{
     var urlToImage: URL?
     var publishedAt: String?
     var content: String?
-    var isLiked: Int?
+    var isLiked: Bool?
     var source: SourceModel?
 }

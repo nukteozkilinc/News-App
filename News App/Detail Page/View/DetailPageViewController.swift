@@ -15,6 +15,7 @@ class DetailPageViewController: UIViewController {
     
     lazy var viewModel: DetailPageViewModelInterface = DetailPageViewModel()
     var article: Articles?
+    var news: NewsModel?
     
     @IBOutlet weak var imgNewsDetail: UIImageView! {
         didSet {
@@ -47,10 +48,13 @@ class DetailPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.view = self
-        
     }
+    
+    @IBAction func pressedSave(_ sender: UIButton) {
+        viewModel.savedNews()
+    }
+    
 }
-
 
 extension DetailPageViewController: DetailPageViewInterface {
     
