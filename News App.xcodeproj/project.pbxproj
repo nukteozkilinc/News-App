@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8B1AC3FA2AB1D25200E5B271 /* DetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1AC3F92AB1D25200E5B271 /* DetailPageViewController.swift */; };
 		8B1AC3FC2AB1D27600E5B271 /* DetailPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1AC3FB2AB1D27600E5B271 /* DetailPageViewModel.swift */; };
+		8B1D21882AB91004008BFE72 /* SavePageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1D21872AB91004008BFE72 /* SavePageTableViewCell.swift */; };
 		8B27E3522AAEFE15000C69E6 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E3512AAEFE15000C69E6 /* HomePageViewController.swift */; };
 		8B27E3542AAEFE24000C69E6 /* HomePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E3532AAEFE24000C69E6 /* HomePageViewModel.swift */; };
 		8B27E3572AAF29E4000C69E6 /* Network Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E3562AAF29E4000C69E6 /* Network Layer.swift */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		8B1AC3F92AB1D25200E5B271 /* DetailPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageViewController.swift; sourceTree = "<group>"; };
 		8B1AC3FB2AB1D27600E5B271 /* DetailPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageViewModel.swift; sourceTree = "<group>"; };
+		8B1D21872AB91004008BFE72 /* SavePageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavePageTableViewCell.swift; sourceTree = "<group>"; };
 		8B27E3512AAEFE15000C69E6 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		8B27E3532AAEFE24000C69E6 /* HomePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewModel.swift; sourceTree = "<group>"; };
 		8B27E3562AAF29E4000C69E6 /* Network Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Network Layer.swift"; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				8B4C59F02AB8432000BAAE34 /* SavePageViewController.swift */,
+				8B1D21872AB91004008BFE72 /* SavePageTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B1D21882AB91004008BFE72 /* SavePageTableViewCell.swift in Sources */,
 				8BF05BCD2AAB4BC50034BBDA /* LoginViewController.swift in Sources */,
 				8B5690102AB7BADC00CC04DF /* Database Layer.swift in Sources */,
 				8B27E35B2AAF42E4000C69E6 /* Articles.swift in Sources */,

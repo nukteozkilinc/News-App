@@ -6,16 +6,16 @@
 //
 
 import Foundation
-import RxSwift
 
 protocol SavePageViewModelInterface {
+    var view: SavePageViewInterface? { get set }
     func fetchSavedNews()
     var newsList: [Articles] { get set }
 }
 
 
 class SavePageViewModel {
-    
+    var view: SavePageViewInterface?
     //var newsList = BehaviorSubject<[NewsModel]>(value: [NewsModel]())
     var newsList: [Articles] = []
 }
@@ -26,13 +26,10 @@ extension SavePageViewModel: SavePageViewModelInterface {
             switch responseData {
             case .success(let news):
                 self.newsList.append(news)
+                self.view?.reloadSaveTableView()
             case .failure(_):
                 break
             }
         }
-        print("BURASI")
-        print(newsList)
     }
-    
-    
 }
