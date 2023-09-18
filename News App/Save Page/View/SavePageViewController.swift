@@ -19,9 +19,11 @@ class SavePageViewController: UIViewController {
 
         super.viewDidLoad()
 
-        _ = viewmodel.newsList.subscribe(onNext: { liste in
-            self.newsList = liste
-        })
+//        _ = viewmodel.newsList.subscribe(onNext: { liste in
+//            self.newsList = liste
+//        })
+        
+        viewmodel.fetchSavedNews()
         
     }
     

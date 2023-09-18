@@ -11,7 +11,8 @@ import CoreData
 
 class DatabaseManager {
     
-    var newsList = BehaviorSubject<[NewsModel]>(value: [NewsModel]())
+   // var newsList = BehaviorSubject<[NewsModel]>(value: [NewsModel]())
+    var newsList = [Articles]()
     
     let context = appDelegate.persistentContainer.viewContext
     
@@ -37,20 +38,28 @@ class DatabaseManager {
         
     }
     
-    func fetchSavedNews() {
+    func fetchSavedNews (completion: @escaping (Result<Articles, Error>) -> Void) -> Void {
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "NewsModel")
-                //request.predicate = NSPredicate(format: "age = %@", "12")
-                request.returnsObjectsAsFaults = false
-                do {
-                    let result = try context.fetch(request)
-                    for data in result as! [NSManagedObject] {
-                       print(data.value(forKey: "author") as! String)
-                  }
-                    
-                } catch {
-                    
-                    print("Failed")
-                }
+        //request.predicate = NSPredicate(format: "age = %@", "12")
+        request.returnsObjectsAsFaults = false
+        do {
+            let result = try context.fetch(request)
+            for data in result as! [NSManagedObject] {
+                let news = Articles(
+                    author: (data.value(forKey: "author") as! String),
+                    title: (data.value(forKey: "title") as! String),
+                    description: (data.value(forKey: "descrip") as! String),
+                    publishedAt: (data.value(forKey: "publishedAt") as! String),
+                    content: (data.value(forKey: "content") as! String),
+                    isLiked: (data.value(forKey: "isLiked") as! Bool)
+                )
+                completion(.success(news))
+                newsList.append(news)
+            }
+        } catch {
+            
+            print("Failed")
+        }
     }
 }
