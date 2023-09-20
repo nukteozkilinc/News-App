@@ -20,6 +20,8 @@ class LoginViewModelController {
 extension LoginViewModelController: LoginViewModelInterface {
     func loginUser(email: String, password: String, vc: UIViewController) {
         firebaseAuth.signIn(email: email, password: password, vc: vc)
+        UserDefaults.standard.set(true, forKey: "isLogin")
+        UserDefaults.standard.synchronize()
     }
     
     

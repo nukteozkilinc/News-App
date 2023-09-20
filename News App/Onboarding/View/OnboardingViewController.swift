@@ -23,6 +23,8 @@ final class OnboardingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        UserDefaults.standard.set(false, forKey: "notFirstInApp")
+        UserDefaults.standard.synchronize()
         viewModel.view = self
         viewModel.viewDidLoad()
         viewModel.fetchData()

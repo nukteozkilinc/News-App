@@ -21,7 +21,8 @@ class LoginViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        UserDefaults.standard.set(true, forKey: "notFirstInApp")
+        UserDefaults.standard.synchronize()
         navigationItem.hidesBackButton = true
     }
     

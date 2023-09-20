@@ -7,7 +7,9 @@
 
 import UIKit
 
-class ProfilePageViewController: UIViewController {
+final class ProfilePageViewController: UIViewController {
+    
+    private lazy var viewModel: ProfilePageViewModelInterface = ProfilePageViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +24,7 @@ class ProfilePageViewController: UIViewController {
     
     
     @IBAction func pressedLogout(_ sender: UIButton) {
-        
+        viewModel.userLogout()
+        self.navigationController?.popToRootViewController(animated: true)
     }
 }
