@@ -14,6 +14,9 @@ protocol HomePageViewInterface: AnyObject {
 
 class HomePageViewController: UIViewController{
     
+    @IBOutlet weak var trailingOfView: NSLayoutConstraint!
+
+    var categorySide = false
     private lazy var viewModel:HomePageViewModelInterface = HomePageViewModel()
     
     @IBOutlet weak var newsTableView: UITableView! {
@@ -23,6 +26,7 @@ class HomePageViewController: UIViewController{
         }
     }
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,6 +34,27 @@ class HomePageViewController: UIViewController{
         viewModel.fetchNews()
         
     }
+    
+    @IBAction func pressedFilter(_ sender: UIBarButtonItem) {
+        if (categorySide) {
+            trailingOfView.constant = 393
+            UIView.animate(withDuration: 0.3, delay: 0.1, options: .curveEaseIn, animations: {
+                self.view.layoutIfNeeded()
+            })
+        } else {
+            trailingOfView.constant = 0
+        }
+        categorySide = !categorySide
+    }
+    
+    @IBAction func pressedGeneral(_ sender: UIButton) {
+        viewModel.filterNews(category: "general")
+    }
+    
+    @IBAction func pressedBusiness(_ sender: UIButton) {
+        viewModel.filterNews(category: "business")
+    }
+    
 }
 
 extension HomePageViewController: UITableViewDelegate, UITableViewDataSource{
@@ -42,8 +67,6 @@ extension HomePageViewController: UITableViewDelegate, UITableViewDataSource{
         
         cell.lblTitle.text = viewModel.articles[indexPath.row].title
         cell.lblDescription.text = viewModel.articles[indexPath.row].description
-        //cell.imgNew.image = UIImage(data: viewModel.fetchImages(article: viewModel.articles[indexPath.row]))
-        //viewModel.fetchImages(article: viewModel.articles[indexPath.row])
         
         //MARK: SOR! RESIMLER DEGISIYOR
         if let urlToImage = viewModel.articles[indexPath.row].urlToImage {

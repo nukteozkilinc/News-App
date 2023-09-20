@@ -25,7 +25,11 @@ final class FirebaseAuth {
                 } else {
                     print("Sign in")
                     // MARK: Buraya nav ekle!
-                    vc.performSegue(withIdentifier: "goToNews", sender: nil)
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                            let newsDetailVC = storyboard.instantiateViewController(withIdentifier: "TabBarViewController") as! TabBarViewController
+                            
+                    newsDetailVC.navigationItem.hidesBackButton = true
+                    vc.navigationController?.pushViewController(newsDetailVC, animated: true)
                 }
             }
         }

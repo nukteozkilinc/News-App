@@ -30,7 +30,7 @@ class SavePageViewController: UIViewController {
 //            self.newsList = liste
 //        })
         
-        navigationItem.hidesBackButton = true
+        navigationItem.rightBarButtonItem?.isHidden = true
         viewmodel.view = self
         viewmodel.fetchSavedNews()
         

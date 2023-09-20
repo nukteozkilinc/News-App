@@ -15,6 +15,7 @@ protocol HomePageViewModelInterface{
     func fetchImages(article: Articles)
     func goToDetailPage()
     func searchNews(search: String)
+    func filterNews(category: String)
 }
 
 final class HomePageViewModel {
@@ -58,6 +59,22 @@ extension HomePageViewModel: HomePageViewModelInterface {
             }
         }
     }
+    
+    func filterNews(category: String) {
+        NetworkManager.shared.filterNews(categoryText: category) { [weak self]
+            responseData in
+            switch responseData {
+            case .success(let news):
+                if let new = news.articles {
+                    self?.articles = new
+                    self?.view?.reloadTableView()
+                }
+            case .failure(_):
+                break
+            }
+        }
+    }
+    
     func fetchImages(article: Articles){
         //NetworkManager.shared.downloadImage(from: article.urlToImage!)
      
