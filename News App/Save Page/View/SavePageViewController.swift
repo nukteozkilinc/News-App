@@ -16,26 +16,27 @@ class SavePageViewController: UIViewController {
     
     private lazy var viewmodel: SavePageViewModelInterface = SavePageViewModel()
 
-    @IBOutlet weak var savedNewsTableView: UITableView!
+    @IBOutlet weak var savedNewsTableView: UITableView! {
+        didSet {
+            savedNewsTableView.delegate = self
+            savedNewsTableView.dataSource = self
+        }
+    }
     
     override func viewDidLoad() {
 
         super.viewDidLoad()
-
-        savedNewsTableView.delegate = self
-        savedNewsTableView.dataSource = self
-        
 //        _ = viewmodel.newsList.subscribe(onNext: { liste in
 //            self.newsList = liste
 //        })
         
+        navigationItem.hidesBackButton = true
         viewmodel.view = self
         viewmodel.fetchSavedNews()
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        
+    override func viewDidAppear(_ animated: Bool) {
         viewmodel.fetchSavedNews()
     }
 }
@@ -51,7 +52,6 @@ extension SavePageViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.lblSavedTitle.text = viewmodel.newsList[indexPath.row].title
         cell.lblSavedDescription.text = viewmodel.newsList[indexPath.row].description
-        
         return cell
     }
     

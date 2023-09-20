@@ -60,6 +60,6 @@ extension HomePageViewModel: HomePageViewModelInterface {
     }
     func fetchImages(article: Articles){
         //NetworkManager.shared.downloadImage(from: article.urlToImage!)
-        
+     
     }
 }

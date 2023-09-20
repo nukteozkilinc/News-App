@@ -45,6 +45,17 @@ extension HomePageViewController: UITableViewDelegate, UITableViewDataSource{
         //cell.imgNew.image = UIImage(data: viewModel.fetchImages(article: viewModel.articles[indexPath.row]))
         //viewModel.fetchImages(article: viewModel.articles[indexPath.row])
         
+        //MARK: SOR! RESIMLER DEGISIYOR
+        if let urlToImage = viewModel.articles[indexPath.row].urlToImage {
+             //let url = URL(string: urlToImage)
+                    DispatchQueue.global().async {
+                        if let data = try? Data(contentsOf: urlToImage) {
+                            DispatchQueue.main.async {
+                                cell.imgNew.image = UIImage(data: data)
+                            }
+                        }
+                    }
+                }
         return cell
     }
     

@@ -15,10 +15,23 @@ class DetailPageViewController: UIViewController {
     
     lazy var viewModel: DetailPageViewModelInterface = DetailPageViewModel()
     var article: Articles?
+    var newsList: [Articles] = []
+    
+    
+    @IBOutlet weak var btnSave: UIButton!
     
     @IBOutlet weak var imgNewsDetail: UIImageView! {
         didSet {
-            
+            if let urlToImage = article!.urlToImage {
+                 //let url = URL(string: urlToImage)
+                        DispatchQueue.global().async {
+                            if let data = try? Data(contentsOf: urlToImage) {
+                                DispatchQueue.main.async {
+                                    self.imgNewsDetail.image = UIImage(data: data)
+                                }
+                            }
+                        }
+                    }
         }
     }
     @IBOutlet weak var lblNewsDetailTitle: UILabel! {
@@ -49,8 +62,49 @@ class DetailPageViewController: UIViewController {
         viewModel.view = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        
+        DatabaseManager.shared.fetchSavedNews(){ [self] response in
+            switch response {
+            case .success(let news):
+                newsList.append(news)
+            case .failure(_):
+                break
+            }
+        }
+        
+        for savedNews in newsList {
+            if savedNews.title == article?.title {
+                article?.isLiked = true
+            }else {
+                article?.isLiked = false
+            }
+        }
+    }
+    
     @IBAction func pressedSave(_ sender: UIButton) {
-        viewModel.savedNews(article: article)
+        
+        print("-------------ONCEDEN--------------------")
+        print(article?.isLiked)
+        print("--------------SIMDI-------------------")
+        if article?.isLiked == false || article?.isLiked == nil {
+            btnSave.setImage(UIImage(named: "heart.fill"), for: .normal)
+            article?.isLiked = true
+            viewModel.savedNews(article: article)
+            
+            print("KAYDETTI")
+            print(article?.isLiked)
+            
+        } else {
+            btnSave.setImage(UIImage(named: "heart"), for: .normal)
+            article?.isLiked = false
+            viewModel.deleteNews(article: article)
+            
+            print("SILINDI")
+            print(article?.isLiked)
+        }
+        
     }
     
 }

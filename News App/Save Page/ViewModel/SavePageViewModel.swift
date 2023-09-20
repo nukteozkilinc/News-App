@@ -22,6 +22,8 @@ class SavePageViewModel {
 
 extension SavePageViewModel: SavePageViewModelInterface {
     func fetchSavedNews() {
+        newsList = []
+        
         DatabaseManager.shared.fetchSavedNews() { responseData in
             switch responseData {
             case .success(let news):

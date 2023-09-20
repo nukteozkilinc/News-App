@@ -223,20 +223,13 @@
         <!--Profil-->
         <scene sceneID="C1W-Ty-Ziy">
             <objects>
-                <viewController id="sRg-2R-gBV" sceneMemberID="viewController">
+                <viewController id="sRg-2R-gBV" customClass="ProfilePageViewController" customModule="News_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dNS-RY-4ci">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UHT-9e-teJ">
                                 <rect key="frame" x="42" y="127" width="0.0" height="0.0"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sifre degistirme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2O-cV-1TI">
-                                <rect key="frame" x="15" y="406" width="121" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -274,6 +267,24 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kqy-U0-uyE">
+                                <rect key="frame" x="14" y="643" width="78" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Logout"/>
+                                <connections>
+                                    <action selector="pressedLogout:" destination="sRg-2R-gBV" eventType="touchUpInside" id="7aX-fq-eQX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMU-sO-qVU">
+                                <rect key="frame" x="14" y="600" width="161" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Change password"/>
+                                <connections>
+                                    <action selector="pressedChangePassword:" destination="sRg-2R-gBV" eventType="touchUpInside" id="Y73-6t-tQ1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MvX-o6-m8m"/>
                         <color key="backgroundColor" name="Background"/>
@@ -484,7 +495,7 @@
                             <constraint firstItem="idZ-PL-0xV" firstAttribute="leading" secondItem="d7w-UR-xFN" secondAttribute="leading" id="rTD-7O-8ex"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Kaydedilenler" id="s7d-rC-vw0"/>
+                    <tabBarItem key="tabBarItem" title="Kaydedilenler" image="heart" catalog="system" selectedImage="heart.fill" id="s7d-rC-vw0"/>
                     <navigationItem key="navigationItem" id="IJp-cI-Vlm"/>
                     <connections>
                         <outlet property="savedNewsTableView" destination="idZ-PL-0xV" id="p3N-mB-uXR"/>
@@ -545,10 +556,10 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xwA-EB-xYX">
-                                                <rect key="frame" x="326" y="8" width="51" height="35"/>
+                                                <rect key="frame" x="327" y="9" width="51" height="35"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system">
+                                                <buttonConfiguration key="configuration" style="plain" image="heart.fill" catalog="system">
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
                                                 <connections>
@@ -596,6 +607,7 @@
                     </view>
                     <size key="freeformSize" width="393" height="1100"/>
                     <connections>
+                        <outlet property="btnSave" destination="xwA-EB-xYX" id="88e-bG-yeq"/>
                         <outlet property="imgNewsDetail" destination="Cd0-oY-Q73" id="fCB-Be-V5q"/>
                         <outlet property="lblNewsDetailAuthor" destination="6VN-WH-Cee" id="JuH-qV-3KK"/>
                         <outlet property="lblNewsDetailContent" destination="3il-7y-Vtl" id="57T-TT-6YD"/>
@@ -727,8 +739,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="dlf-QE-nph" kind="relationship" relationship="viewControllers" id="NUJ-Jp-h1v"/>
                         <segue destination="fAC-LK-7KC" kind="relationship" relationship="viewControllers" id="0tS-Pw-Ge7"/>
+                        <segue destination="dlf-QE-nph" kind="relationship" relationship="viewControllers" id="NUJ-Jp-h1v"/>
                         <segue destination="sRg-2R-gBV" kind="relationship" relationship="viewControllers" id="TGG-FV-rwP"/>
                     </connections>
                 </tabBarController>
@@ -739,6 +751,7 @@
     </scenes>
     <resources>
         <image name="heart" catalog="system" width="128" height="107"/>
+        <image name="heart.fill" catalog="system" width="128" height="107"/>
         <image name="homekit" catalog="system" width="128" height="104"/>
         <image name="person" catalog="system" width="128" height="121"/>
         <image name="rainbow.jpg" width="58.560001373291016" height="30.239999771118164"/>

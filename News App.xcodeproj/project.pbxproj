@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B0BA8062ABA22A600234027 /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0BA8052ABA22A600234027 /* ProfilePageViewController.swift */; };
+		8B0BA80A2ABA22E500234027 /* ProfilePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0BA8092ABA22E500234027 /* ProfilePageViewModel.swift */; };
 		8B1AC3FA2AB1D25200E5B271 /* DetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1AC3F92AB1D25200E5B271 /* DetailPageViewController.swift */; };
 		8B1AC3FC2AB1D27600E5B271 /* DetailPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1AC3FB2AB1D27600E5B271 /* DetailPageViewModel.swift */; };
 		8B1D21882AB91004008BFE72 /* SavePageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1D21872AB91004008BFE72 /* SavePageTableViewCell.swift */; };
@@ -44,6 +46,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B0BA8052ABA22A600234027 /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
+		8B0BA8092ABA22E500234027 /* ProfilePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewModel.swift; sourceTree = "<group>"; };
 		8B1AC3F92AB1D25200E5B271 /* DetailPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageViewController.swift; sourceTree = "<group>"; };
 		8B1AC3FB2AB1D27600E5B271 /* DetailPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageViewModel.swift; sourceTree = "<group>"; };
 		8B1D21872AB91004008BFE72 /* SavePageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavePageTableViewCell.swift; sourceTree = "<group>"; };
@@ -93,6 +97,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B0BA8042ABA227500234027 /* Profile Page */ = {
+			isa = PBXGroup;
+			children = (
+				8B0BA8082ABA22B100234027 /* ViewModel */,
+				8B0BA8072ABA22AB00234027 /* View */,
+			);
+			path = "Profile Page";
+			sourceTree = "<group>";
+		};
+		8B0BA8072ABA22AB00234027 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8B0BA8052ABA22A600234027 /* ProfilePageViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8B0BA8082ABA22B100234027 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8B0BA8092ABA22E500234027 /* ProfilePageViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		8B18DD4E2AAA8A68002D01F9 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,6 +303,7 @@
 		8BEA83112AA8A11B00BEC145 /* News App */ = {
 			isa = PBXGroup;
 			children = (
+				8B0BA8042ABA227500234027 /* Profile Page */,
 				8B6472092AB8AC6300FFF774 /* Model.xcdatamodeld */,
 				8B568FFB2AB7862800CC04DF /* Save Page */,
 				8B9A015F2AB50C6C00317C77 /* Register Page */,
@@ -420,6 +450,7 @@
 				8B5690102AB7BADC00CC04DF /* Database Layer.swift in Sources */,
 				8B27E35B2AAF42E4000C69E6 /* Articles.swift in Sources */,
 				8B1AC3FA2AB1D25200E5B271 /* DetailPageViewController.swift in Sources */,
+				8B0BA80A2ABA22E500234027 /* ProfilePageViewModel.swift in Sources */,
 				8B27E35D2AAF434E000C69E6 /* News.swift in Sources */,
 				8B9A01612AB50C7F00317C77 /* RegisterPageViewController.swift in Sources */,
 				8BEA832B2AA8C7F000BEC145 /* OnboardingSlide.swift in Sources */,
@@ -434,6 +465,7 @@
 				8B27E3542AAEFE24000C69E6 /* HomePageViewModel.swift in Sources */,
 				8B64720B2AB8AC6300FFF774 /* Model.xcdatamodeld in Sources */,
 				8B9A015E2AB5085500317C77 /* Firebase Auth .swift in Sources */,
+				8B0BA8062ABA22A600234027 /* ProfilePageViewController.swift in Sources */,
 				8B27E3572AAF29E4000C69E6 /* Network Layer.swift in Sources */,
 				8B568FF62AB77F4800CC04DF /* RegisterViewModel.swift in Sources */,
 				8B1AC3FC2AB1D27600E5B271 /* DetailPageViewModel.swift in Sources */,
