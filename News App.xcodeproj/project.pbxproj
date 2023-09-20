@@ -27,6 +27,10 @@
 		8B64720B2AB8AC6300FFF774 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B6472092AB8AC6300FFF774 /* Model.xcdatamodeld */; };
 		8B6479772ABAF39600B15F42 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6479762ABAF39600B15F42 /* TabBarViewController.swift */; };
 		8B64797B2ABB179F00B15F42 /* PasswordPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B64797A2ABB179F00B15F42 /* PasswordPageViewController.swift */; };
+		8B64797E2ABB2E4800B15F42 /* UISideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B64797D2ABB2E4800B15F42 /* UISideMenuViewController.swift */; };
+		8B6479802ABB32E300B15F42 /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B64797F2ABB32E300B15F42 /* SideMenuTableViewCell.swift */; };
+		8B6479842ABB34E400B15F42 /* SideMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6479832ABB34E400B15F42 /* SideMenuViewModel.swift */; };
+		8B6479872ABB571F00B15F42 /* PasswordPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6479862ABB571F00B15F42 /* PasswordPageViewModel.swift */; };
 		8B9A015E2AB5085500317C77 /* Firebase Auth .swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9A015D2AB5085500317C77 /* Firebase Auth .swift */; };
 		8B9A01612AB50C7F00317C77 /* RegisterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9A01602AB50C7F00317C77 /* RegisterPageViewController.swift */; };
 		8BB2843F2AAF6B02006C8FF7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8BB2843E2AAF6B02006C8FF7 /* Alamofire */; };
@@ -67,6 +71,10 @@
 		8B64720A2AB8AC6300FFF774 /* NewsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NewsModel.xcdatamodel; sourceTree = "<group>"; };
 		8B6479762ABAF39600B15F42 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		8B64797A2ABB179F00B15F42 /* PasswordPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordPageViewController.swift; sourceTree = "<group>"; };
+		8B64797D2ABB2E4800B15F42 /* UISideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISideMenuViewController.swift; sourceTree = "<group>"; };
+		8B64797F2ABB32E300B15F42 /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
+		8B6479832ABB34E400B15F42 /* SideMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewModel.swift; sourceTree = "<group>"; };
+		8B6479862ABB571F00B15F42 /* PasswordPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordPageViewModel.swift; sourceTree = "<group>"; };
 		8B9A015D2AB5085500317C77 /* Firebase Auth .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firebase Auth .swift"; sourceTree = "<group>"; };
 		8B9A01602AB50C7F00317C77 /* RegisterPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageViewController.swift; sourceTree = "<group>"; };
 		8BBD74902AB5C75000777A9D /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
@@ -264,6 +272,7 @@
 		8B6479782ABB178100B15F42 /* Password Page */ = {
 			isa = PBXGroup;
 			children = (
+				8B6479852ABB571000B15F42 /* ViewModel */,
 				8B6479792ABB178B00B15F42 /* View */,
 			);
 			path = "Password Page";
@@ -275,6 +284,40 @@
 				8B64797A2ABB179F00B15F42 /* PasswordPageViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		8B64797C2ABB2E0E00B15F42 /* Side Menu */ = {
+			isa = PBXGroup;
+			children = (
+				8B6479822ABB34D000B15F42 /* ViewModel */,
+				8B6479812ABB337000B15F42 /* View */,
+			);
+			path = "Side Menu";
+			sourceTree = "<group>";
+		};
+		8B6479812ABB337000B15F42 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8B64797D2ABB2E4800B15F42 /* UISideMenuViewController.swift */,
+				8B64797F2ABB32E300B15F42 /* SideMenuTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8B6479822ABB34D000B15F42 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8B6479832ABB34E400B15F42 /* SideMenuViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8B6479852ABB571000B15F42 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8B6479862ABB571F00B15F42 /* PasswordPageViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		8B9A015C2AB5081100317C77 /* Network */ = {
@@ -323,9 +366,10 @@
 		8BEA83112AA8A11B00BEC145 /* News App */ = {
 			isa = PBXGroup;
 			children = (
-				8B6479782ABB178100B15F42 /* Password Page */,
 				8BEA83122AA8A11B00BEC145 /* AppDelegate.swift */,
 				8BEA83142AA8A11B00BEC145 /* SceneDelegate.swift */,
+				8B64797C2ABB2E0E00B15F42 /* Side Menu */,
+				8B6479782ABB178100B15F42 /* Password Page */,
 				8B0BA8042ABA227500234027 /* Profile Page */,
 				8B568FFB2AB7862800CC04DF /* Save Page */,
 				8B9A015F2AB50C6C00317C77 /* Register Page */,
@@ -476,13 +520,16 @@
 				8B0BA80A2ABA22E500234027 /* ProfilePageViewModel.swift in Sources */,
 				8B27E35D2AAF434E000C69E6 /* News.swift in Sources */,
 				8B9A01612AB50C7F00317C77 /* RegisterPageViewController.swift in Sources */,
+				8B6479802ABB32E300B15F42 /* SideMenuTableViewCell.swift in Sources */,
 				8BEA832B2AA8C7F000BEC145 /* OnboardingSlide.swift in Sources */,
 				8BEA83172AA8A11B00BEC145 /* OnboardingViewController.swift in Sources */,
 				8B4C59F62AB8438100BAAE34 /* SavePageViewModel.swift in Sources */,
 				8BEA83132AA8A11B00BEC145 /* AppDelegate.swift in Sources */,
+				8B6479842ABB34E400B15F42 /* SideMenuViewModel.swift in Sources */,
 				8BEA83282AA8C6DA00BEC145 /* UIView+Extensions.swift in Sources */,
 				8B4C59F12AB8432000BAAE34 /* SavePageViewController.swift in Sources */,
 				8BEA83152AA8A11B00BEC145 /* SceneDelegate.swift in Sources */,
+				8B64797E2ABB2E4800B15F42 /* UISideMenuViewController.swift in Sources */,
 				8BBD74912AB5C75000777A9D /* Alerts.swift in Sources */,
 				8B27E3522AAEFE15000C69E6 /* HomePageViewController.swift in Sources */,
 				8B27E3542AAEFE24000C69E6 /* HomePageViewModel.swift in Sources */,
@@ -493,6 +540,7 @@
 				8B568FF62AB77F4800CC04DF /* RegisterViewModel.swift in Sources */,
 				8B1AC3FC2AB1D27600E5B271 /* DetailPageViewModel.swift in Sources */,
 				8BEA83352AA932D600BEC145 /* OnboardingViewModel.swift in Sources */,
+				8B6479872ABB571F00B15F42 /* PasswordPageViewModel.swift in Sources */,
 				8BF05BCF2AAB4BD10034BBDA /* LoginViewModelController.swift in Sources */,
 				8B27E3592AAF42B0000C69E6 /* SourceModel.swift in Sources */,
 				8BEA832D2AA8C9B000BEC145 /* OnboardingCollectionViewCell.swift in Sources */,

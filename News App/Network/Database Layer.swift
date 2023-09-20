@@ -11,16 +11,12 @@ import CoreData
 
 class DatabaseManager {
     
-   // var newsList = BehaviorSubject<[NewsModel]>(value: [NewsModel]())
-    
-    
     let context = appDelegate.persistentContainer.viewContext
     
     static let shared = DatabaseManager()
     
     func saveNews(author: String, content: String, description: String, publishedAt: String, title: String) {
-        //let news = NewsModel(context: context)
-        
+      
         let entity = NSEntityDescription.entity(forEntityName: "NewsModel", in: context)
         let news = NSManagedObject(entity: entity!, insertInto: context)
         
@@ -49,30 +45,13 @@ class DatabaseManager {
         } catch {
             print(error.localizedDescription)
         }
-
-//        NewsModel.fetchRequest().predicate = NSPredicate(format: "title == %@", news.title!)
-//        let existingNews = try! context.fetch(NewsModel.fetchRequest())
-//        if let newsToDelete = existingNews.first {
-//            context.delete(newsToDelete)
-//            appDelegate.saveContext()
-//        }
-        
-//        do {
-//               let fetchRequest : NSFetchRequest<Contact> = Contact.fetchRequest()
-//               fetchRequest.predicate = NSPredicate(format: "uniqueId == %@", contactIdentifier)
-//               let fetchedResults = try context.fetch(fetchRequest)
-//               if let aContact = fetchedResults.first {
-//                  providerName.text = aContact.providerName
-//               }
-//           }
     }
     
-    func fetchSavedNews (completion: @escaping (Result<Articles, Error>) -> Void) -> Void {
+    func fetchSavedNews (completion: @escaping (Result<[Articles], Error>) -> Void) -> Void {
         
         var newsList = [Articles]()
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "NewsModel")
-        //request.predicate = NSPredicate(format: "age = %@", "12")
         request.returnsObjectsAsFaults = false
         do {
             let result = try context.fetch(request)
@@ -85,10 +64,9 @@ class DatabaseManager {
                     content: (data.value(forKey: "content") as! String),
                     isLiked: (data.value(forKey: "isLiked") as! Bool)
                 )
-                completion(.success(news))
                 newsList.append(news)
+                completion(.success(newsList))
             }
-            print(newsList)
         } catch {
             print("Failed")
         }

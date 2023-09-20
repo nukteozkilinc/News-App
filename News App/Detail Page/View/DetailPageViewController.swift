@@ -18,7 +18,11 @@ class DetailPageViewController: UIViewController {
     var newsList: [Articles] = []
     
     
-    @IBOutlet weak var btnSave: UIButton!
+    @IBOutlet weak var btnSave: UIButton! {
+        didSet {
+            btnSave.setImage(UIImage(named: "heart"), for: .normal)
+        }
+    }
     
     @IBOutlet weak var imgNewsDetail: UIImageView! {
         didSet {
@@ -68,7 +72,7 @@ class DetailPageViewController: UIViewController {
         DatabaseManager.shared.fetchSavedNews(){ [self] response in
             switch response {
             case .success(let news):
-                newsList.append(news)
+                newsList = news
             case .failure(_):
                 break
             }
@@ -85,24 +89,14 @@ class DetailPageViewController: UIViewController {
     
     @IBAction func pressedSave(_ sender: UIButton) {
         
-        print("-------------ONCEDEN--------------------")
-        print(article?.isLiked)
-        print("--------------SIMDI-------------------")
         if article?.isLiked == false || article?.isLiked == nil {
             btnSave.setImage(UIImage(named: "heart.fill"), for: .normal)
             article?.isLiked = true
             viewModel.savedNews(article: article)
-            
-            print("KAYDETTI")
-            print(article?.isLiked)
-            
         } else {
             btnSave.setImage(UIImage(named: "heart"), for: .normal)
             article?.isLiked = false
             viewModel.deleteNews(article: article)
-            
-            print("SILINDI")
-            print(article?.isLiked)
         }
         
     }

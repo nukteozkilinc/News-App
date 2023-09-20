@@ -27,20 +27,7 @@ class PasswordPageViewController: UIViewController {
                     
                 }
             } else {
-                Auth.auth().currentUser?.updatePassword(to: newPassword) { error in
-                    if let e = error {
-                        Alerts.shared.presentAlert(on: self, with: "", message: String(e.localizedDescription), options: "OK") { _ in
-                            print(String(error!.localizedDescription))
-                        }
-                    }
-                    Alerts.shared.presentAlert(on: self, with: "SUCCESS", message: "Your password has changed. Please login again.", options: "OK") { _ in
-                        
-                    }
-                    
-                }
-                
-                
-                
+                FirebaseAuth.shared.changePassword(newPassword: newPassword, vc: self)
             }
             
         }

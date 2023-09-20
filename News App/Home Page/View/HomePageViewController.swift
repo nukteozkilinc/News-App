@@ -16,6 +16,14 @@ class HomePageViewController: UIViewController{
     
     private lazy var viewModel:HomePageViewModelInterface = HomePageViewModel()
     
+    @IBOutlet weak var sideMenuView: UIView!
+    {
+        didSet {
+            sideMenuView.isHidden = true
+        }
+    }
+    
+    
     @IBOutlet weak var newsTableView: UITableView! {
         didSet {
             newsTableView.delegate = self
@@ -28,7 +36,8 @@ class HomePageViewController: UIViewController{
         
         viewModel.view = self
         viewModel.fetchNews()
-        
+        //navigationItem.hidesBackButton = false
+        navigationItem.leftBarButtonItem?.image = UIImage(named: "")
     }
 }
 

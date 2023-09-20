@@ -32,6 +32,7 @@ class LoginViewController: UIViewController{
         if let email = tfEmail.text, let password = tfPassword.text {
             viewModel?.loginUser(email: email, password: password, vc: self)
         }
+        
     }
     
 }

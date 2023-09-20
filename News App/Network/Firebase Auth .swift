@@ -13,6 +13,20 @@ final class FirebaseAuth {
     
     static let shared = FirebaseAuth()
     
+    func changePassword(newPassword: String, vc: UIViewController) {
+        Auth.auth().currentUser?.updatePassword(to: newPassword) { error in
+            if let e = error {
+                Alerts.shared.presentAlert(on: vc, with: "", message: String(e.localizedDescription), options: "OK") { _ in
+                    print(String(error!.localizedDescription))
+                }
+            }
+            Alerts.shared.presentAlert(on: vc, with: "SUCCESS", message: "Your password has changed. Please login again.", options: "OK") { _ in
+                
+            }
+            
+        }
+    }
+    
     func signIn(email: String?, password: String?, vc: UIViewController) {
         
         if let email, let password {

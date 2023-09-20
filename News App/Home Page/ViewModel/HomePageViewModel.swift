@@ -12,7 +12,6 @@ protocol HomePageViewModelInterface{
     var articles: [Articles] { get set }
     var articleDetail: Articles? { get set }
     func fetchNews()
-    func fetchImages(article: Articles)
     func goToDetailPage()
     func searchNews(search: String)
 }
@@ -57,9 +56,5 @@ extension HomePageViewModel: HomePageViewModelInterface {
                 break
             }
         }
-    }
-    func fetchImages(article: Articles){
-        //NetworkManager.shared.downloadImage(from: article.urlToImage!)
-     
     }
 }
