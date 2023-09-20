@@ -123,7 +123,6 @@ final class NetworkManager {
     
     func searchNews(searchText: String, completion: @escaping (Result<News , Error>) -> Void ) -> Void {
         let endpoint = EndPoint.searchNews
-        //endpoint.search = "NASA"
         request(endpoint,additionalQuery: searchText ,completion: completion)
     }
     

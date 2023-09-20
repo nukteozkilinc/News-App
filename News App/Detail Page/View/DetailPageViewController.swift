@@ -18,7 +18,23 @@ class DetailPageViewController: UIViewController {
     var newsList: [Articles] = []
     
     
-    @IBOutlet weak var btnSave: UIButton!
+    @IBOutlet weak var btnSave: UIButton!{
+        didSet {
+            if article?.isLiked == true {
+                if let originalImage = UIImage(named: "saved") {
+                    // Resize the image
+                    let resizedImage = originalImage.scaleImage(toSize: CGSize(width: 70, height: 70))
+                    btnSave.setImage(resizedImage, for: .normal)
+                }
+            } else {
+                if let originalImage = UIImage(named: "unsaved") {
+                    // Resize the image
+                    let resizedImage = originalImage.scaleImage(toSize: CGSize(width: 70, height: 70))
+                    btnSave.setImage(resizedImage, for: .normal)
+                }
+            }
+        }
+    }
     
     @IBOutlet weak var imgNewsDetail: UIImageView! {
         didSet {
@@ -64,11 +80,10 @@ class DetailPageViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         
-        
         DatabaseManager.shared.fetchSavedNews(){ [self] response in
             switch response {
             case .success(let news):
-                newsList.append(news)
+                newsList = news
             case .failure(_):
                 break
             }
@@ -85,24 +100,24 @@ class DetailPageViewController: UIViewController {
     
     @IBAction func pressedSave(_ sender: UIButton) {
         
-        print("-------------ONCEDEN--------------------")
-        print(article?.isLiked)
-        print("--------------SIMDI-------------------")
         if article?.isLiked == false || article?.isLiked == nil {
-            btnSave.setImage(UIImage(named: "heart.fill"), for: .normal)
+            if let originalImage = UIImage(named: "saved") {
+                // Resize the image
+                let resizedImage = originalImage.scaleImage(toSize: CGSize(width: 70, height: 70))
+                btnSave.setImage(resizedImage, for: .normal)
+            }
             article?.isLiked = true
             viewModel.savedNews(article: article)
             
-            print("KAYDETTI")
-            print(article?.isLiked)
-            
         } else {
-            btnSave.setImage(UIImage(named: "heart"), for: .normal)
+            if let originalImage = UIImage(named: "unsaved") {
+                // Resize the image
+                let resizedImage = originalImage.scaleImage(toSize: CGSize(width: 70, height: 70))
+                btnSave.setImage(resizedImage, for: .normal)
+            }
             article?.isLiked = false
             viewModel.deleteNews(article: article)
             
-            print("SILINDI")
-            print(article?.isLiked)
         }
         
     }

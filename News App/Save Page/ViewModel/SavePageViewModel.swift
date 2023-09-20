@@ -27,7 +27,7 @@ extension SavePageViewModel: SavePageViewModelInterface {
         DatabaseManager.shared.fetchSavedNews() { responseData in
             switch responseData {
             case .success(let news):
-                self.newsList.append(news)
+                self.newsList = news
                 self.view?.reloadSaveTableView()
             case .failure(_):
                 break

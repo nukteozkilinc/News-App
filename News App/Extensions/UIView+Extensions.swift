@@ -16,3 +16,16 @@ extension UIView {
         }
     }
 }
+
+extension UIImage {
+    func scaleImage(toSize newSize: CGSize) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
+        defer { UIGraphicsEndImageContext() }
+
+        self.draw(in: CGRect(origin: .zero, size: newSize))
+        if let newImage = UIGraphicsGetImageFromCurrentImageContext() {
+            return newImage
+        }
+        return self
+    }
+}

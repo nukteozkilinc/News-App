@@ -26,9 +26,6 @@ class SavePageViewController: UIViewController {
     override func viewDidLoad() {
 
         super.viewDidLoad()
-//        _ = viewmodel.newsList.subscribe(onNext: { liste in
-//            self.newsList = liste
-//        })
         
         navigationItem.rightBarButtonItem?.isHidden = true
         viewmodel.view = self
