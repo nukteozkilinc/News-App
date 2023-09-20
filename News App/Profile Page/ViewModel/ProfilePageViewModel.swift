@@ -5,12 +5,11 @@
 //  Created by Nukte Ozkilinc on 19.09.2023.
 //
 
-import Foundation
 import FirebaseAuth
+import UIKit
 
 protocol ProfilePageViewModelInterface {
     var view: ProfilePageViewInterface? { get set }
-    func changePassword()
     func userLogout()
     func goToLogin()
 }
@@ -18,13 +17,12 @@ protocol ProfilePageViewModelInterface {
 
 final class ProfilePageViewModel {
     var view: ProfilePageViewInterface?
+    var currentPassword: String?
+    var newPassword: String?
 }
 
 extension ProfilePageViewModel: ProfilePageViewModelInterface {
-    func changePassword() {
-        return
-    }
-    
+ 
     func userLogout() {
         let firebaseAuth = Auth.auth()
         do {

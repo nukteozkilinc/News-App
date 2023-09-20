@@ -16,11 +16,12 @@ class Alerts {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         for (index, option) in options.enumerated() {
-            alertController.addAction(UIAlertAction.init(title: option, style: .default,
-                                                         handler: { action in
+            alertController.addAction(UIAlertAction.init(title: option, style: .default, handler: { action in
                 completion(index)
             }))
         }
         vc.present(alertController, animated: true, completion: nil)
     }
+    
+
 }

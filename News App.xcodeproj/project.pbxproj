@@ -26,6 +26,7 @@
 		8B5690102AB7BADC00CC04DF /* Database Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B56900F2AB7BADC00CC04DF /* Database Layer.swift */; };
 		8B64720B2AB8AC6300FFF774 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B6472092AB8AC6300FFF774 /* Model.xcdatamodeld */; };
 		8B6479772ABAF39600B15F42 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6479762ABAF39600B15F42 /* TabBarViewController.swift */; };
+		8B64797B2ABB179F00B15F42 /* PasswordPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B64797A2ABB179F00B15F42 /* PasswordPageViewController.swift */; };
 		8B9A015E2AB5085500317C77 /* Firebase Auth .swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9A015D2AB5085500317C77 /* Firebase Auth .swift */; };
 		8B9A01612AB50C7F00317C77 /* RegisterPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9A01602AB50C7F00317C77 /* RegisterPageViewController.swift */; };
 		8BB2843F2AAF6B02006C8FF7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8BB2843E2AAF6B02006C8FF7 /* Alamofire */; };
@@ -65,6 +66,7 @@
 		8B56900F2AB7BADC00CC04DF /* Database Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Database Layer.swift"; sourceTree = "<group>"; };
 		8B64720A2AB8AC6300FFF774 /* NewsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NewsModel.xcdatamodel; sourceTree = "<group>"; };
 		8B6479762ABAF39600B15F42 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		8B64797A2ABB179F00B15F42 /* PasswordPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordPageViewController.swift; sourceTree = "<group>"; };
 		8B9A015D2AB5085500317C77 /* Firebase Auth .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firebase Auth .swift"; sourceTree = "<group>"; };
 		8B9A01602AB50C7F00317C77 /* RegisterPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPageViewController.swift; sourceTree = "<group>"; };
 		8BBD74902AB5C75000777A9D /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
@@ -259,6 +261,22 @@
 			path = "Save Page";
 			sourceTree = "<group>";
 		};
+		8B6479782ABB178100B15F42 /* Password Page */ = {
+			isa = PBXGroup;
+			children = (
+				8B6479792ABB178B00B15F42 /* View */,
+			);
+			path = "Password Page";
+			sourceTree = "<group>";
+		};
+		8B6479792ABB178B00B15F42 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8B64797A2ABB179F00B15F42 /* PasswordPageViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		8B9A015C2AB5081100317C77 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -305,6 +323,7 @@
 		8BEA83112AA8A11B00BEC145 /* News App */ = {
 			isa = PBXGroup;
 			children = (
+				8B6479782ABB178100B15F42 /* Password Page */,
 				8BEA83122AA8A11B00BEC145 /* AppDelegate.swift */,
 				8BEA83142AA8A11B00BEC145 /* SceneDelegate.swift */,
 				8B0BA8042ABA227500234027 /* Profile Page */,
@@ -452,6 +471,7 @@
 				8BF05BCD2AAB4BC50034BBDA /* LoginViewController.swift in Sources */,
 				8B5690102AB7BADC00CC04DF /* Database Layer.swift in Sources */,
 				8B27E35B2AAF42E4000C69E6 /* Articles.swift in Sources */,
+				8B64797B2ABB179F00B15F42 /* PasswordPageViewController.swift in Sources */,
 				8B1AC3FA2AB1D25200E5B271 /* DetailPageViewController.swift in Sources */,
 				8B0BA80A2ABA22E500234027 /* ProfilePageViewModel.swift in Sources */,
 				8B27E35D2AAF434E000C69E6 /* News.swift in Sources */,
