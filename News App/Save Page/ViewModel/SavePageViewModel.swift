@@ -10,12 +10,13 @@ import UIKit
 
 protocol SavePageViewModelInterface {
     var view: SavePageViewInterface? { get set }
-    func fetchSavedNews()
     var newsList: [Articles] { get set }
+    
+    func fetchSavedNews()
+    func fetchImages(url : URL, completion: ((UIImage?) -> Void)?)
 }
 
-
-class SavePageViewModel {
+final class SavePageViewModel {
     var view: SavePageViewInterface?
     var newsList: [Articles] = []
 }
@@ -31,6 +32,18 @@ extension SavePageViewModel: SavePageViewModelInterface {
                 self.view?.reloadSaveTableView()
             case .failure(_):
                 break
+            }
+        }
+    }
+    
+    
+    func fetchImages(url : URL, completion: ((UIImage?) -> Void)?) {
+        DispatchQueue.global().async {
+            if let data = try? Data(contentsOf: url) {
+                let image = UIImage(data: data)
+                DispatchQueue.main.async {
+                    completion?(image)
+                }
             }
         }
     }
