@@ -62,7 +62,7 @@ extension DetailPageViewModel: DetailPageViewModelInterface {
             view?.resizeImage(imageName: "saved")
         }else {
             view?.article?.isLiked = false
-                view?.resizeImage(imageName: "unsaved")
+            view?.resizeImage(imageName: "unsaved")
         }
     }
 }

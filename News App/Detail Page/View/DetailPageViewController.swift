@@ -89,5 +89,4 @@ extension DetailPageViewController: DetailPageViewInterface {
             btnSave.setImage(resizedImage, for: .normal)
         }
     }
-    
 }
