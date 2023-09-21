@@ -323,9 +323,9 @@
 		8BEA83112AA8A11B00BEC145 /* News App */ = {
 			isa = PBXGroup;
 			children = (
-				8B6479782ABB178100B15F42 /* Password Page */,
 				8BEA83122AA8A11B00BEC145 /* AppDelegate.swift */,
 				8BEA83142AA8A11B00BEC145 /* SceneDelegate.swift */,
+				8B6479782ABB178100B15F42 /* Password Page */,
 				8B0BA8042ABA227500234027 /* Profile Page */,
 				8B568FFB2AB7862800CC04DF /* Save Page */,
 				8B9A015F2AB50C6C00317C77 /* Register Page */,
