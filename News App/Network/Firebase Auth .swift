@@ -64,24 +64,4 @@ final class FirebaseAuth {
             }
         }
     }
-//    func register(email: String?, password: String?, vc: UIViewController) {
-//        
-//        if let email, let password {
-//            Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-//                if let error {
-//                    Alerts.shared.presentAlert(on: vc, with: "FAILED!", message: String(error.localizedDescription), options: "OK") { _ in
-//                        print(error.localizedDescription)
-//                    }
-//                }else {
-//                    Alerts.shared.presentAlert(on: vc, with: "SAVED!", message: "User saved successfully", options: "OK") { _ in
-//                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//                        let newsDetailVC = storyboard.instantiateViewController(withIdentifier: "TabBarViewController") as! TabBarViewController
-//
-//                        newsDetailVC.navigationItem.hidesBackButton = true
-//                        vc.navigationController?.pushViewController(newsDetailVC, animated: true)
-//                    }
-//                }
-//            }
-//        }
-//    }
 }

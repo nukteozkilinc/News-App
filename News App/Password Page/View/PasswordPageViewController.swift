@@ -31,7 +31,6 @@ final class PasswordPageViewController: UIViewController {
         
         if let currentPassword = txtCurrentPassword?.text, let newPassword = txtNewPassword?.text {
             viewModel.changePassword(currentPassword: currentPassword, newPassword: newPassword)
-            self.dismiss(animated: true)
         }
     }
 }
@@ -45,13 +44,14 @@ extension PasswordPageViewController: PasswordPageProtocol {
     
     func showFailedError(error: Error) {
             Alerts.shared.presentAlert(on: self, with: "", message: String(error.localizedDescription), options: "OK") { _ in
-                print(String(error.localizedDescription))
+                self.dismiss(animated: true)
             }
         
     }
     
     func showSamePasswordAlert() {
         Alerts.shared.presentAlert(on: self, with: "FAILED", message: "Old password and new password cannot be the same", options: "OK") { _ in
+            self.dismiss(animated: true)
         }
     }
     

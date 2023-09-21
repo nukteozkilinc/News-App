@@ -54,6 +54,9 @@ extension DetailPageViewModel: DetailPageViewModelInterface {
             view?.article?.isLiked = false
             deleteNews(article: view?.article)
         }
+        
+        print("--PRESSED NEWS----")
+        print(view?.article?.isLiked)
     }
     
     func checkSavedNews(savedNews: Articles?) {
@@ -64,5 +67,7 @@ extension DetailPageViewModel: DetailPageViewModelInterface {
             view?.article?.isLiked = false
             view?.resizeImage(imageName: "unsaved")
         }
+        print("--CHECK NEWS----")
+        print(view?.article?.isLiked)
     }
 }
