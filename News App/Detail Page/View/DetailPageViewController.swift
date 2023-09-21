@@ -18,15 +18,9 @@ class DetailPageViewController: UIViewController {
     var newsList: [Articles] = []
     
     
-    @IBOutlet weak var btnSave: UIButton!{
+    @IBOutlet weak var btnSave: UIButton! {
         didSet {
-            if article?.isLiked == true {
-                if let originalImage = UIImage(named: "saved") {
-                    // Resize the image
-                    let resizedImage = originalImage.scaleImage(toSize: CGSize(width: 70, height: 70))
-                    btnSave.setImage(resizedImage, for: .normal)
-                }
-            } else {
+            if article?.isLiked == false {
                 if let originalImage = UIImage(named: "unsaved") {
                     // Resize the image
                     let resizedImage = originalImage.scaleImage(toSize: CGSize(width: 70, height: 70))
@@ -90,10 +84,21 @@ class DetailPageViewController: UIViewController {
         }
         
         for savedNews in newsList {
+            
             if savedNews.title == article?.title {
                 article?.isLiked = true
+                if let originalImage = UIImage(named: "saved") {
+                    // Resize the image
+                    let resizedImage = originalImage.scaleImage(toSize: CGSize(width: 70, height: 70))
+                    btnSave.setImage(resizedImage, for: .normal)
+                }
             }else {
                 article?.isLiked = false
+                    if let originalImage = UIImage(named: "unsaved") {
+                        // Resize the image
+                        let resizedImage = originalImage.scaleImage(toSize: CGSize(width: 70, height: 70))
+                        btnSave.setImage(resizedImage, for: .normal)
+                }
             }
         }
     }
