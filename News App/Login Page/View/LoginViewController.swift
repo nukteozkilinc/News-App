@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol LoginViewInterface {
-    
-}
-
 class LoginViewController: UIViewController{
     
     @IBOutlet weak var tfEmail: UITextField!
@@ -21,17 +17,14 @@ class LoginViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        UserDefaults.standard.set(true, forKey: "notFirstInApp")
-        UserDefaults.standard.synchronize()
+        viewModel?.controlOnboarding()
         navigationItem.hidesBackButton = true
     }
     
     
     @IBAction func pressedLogin(_ sender: UIButton) {
-        
         if let email = tfEmail.text, let password = tfPassword.text {
             viewModel?.loginUser(email: email, password: password, vc: self)
         }
     }
-    
 }
