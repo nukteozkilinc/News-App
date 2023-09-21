@@ -3,7 +3,6 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -20,7 +19,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Rmz-Un-0ON">
                                 <rect key="frame" x="0.0" y="103" width="393" height="583"/>
-                                <color key="backgroundColor" name="Background"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="yPc-bM-IGl">
                                     <size key="itemSize" width="387" height="606"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -51,26 +50,24 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <constraints>
-                                                        <constraint firstItem="gzY-R8-MxJ" firstAttribute="top" secondItem="MoK-HU-aUB" secondAttribute="top" id="ZkX-hm-Muq"/>
-                                                    </constraints>
                                                 </stackView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search-filter" translatesAutoresizingMaskIntoConstraints="NO" id="Nsv-uC-hkP">
-                                                    <rect key="frame" x="102" y="175" width="183" height="256"/>
+                                                    <rect key="frame" x="96" y="215" width="195" height="256"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Nsv-uC-hkP" firstAttribute="centerY" secondItem="wuJ-16-vwm" secondAttribute="centerY" id="0Ka-ni-pYs"/>
                                                 <constraint firstItem="MoK-HU-aUB" firstAttribute="leading" secondItem="wuJ-16-vwm" secondAttribute="leading" constant="16" id="47D-OX-FIy"/>
-                                                <constraint firstItem="Nsv-uC-hkP" firstAttribute="leading" secondItem="wuJ-16-vwm" secondAttribute="leading" constant="102" id="7bj-Ds-4GD"/>
+                                                <constraint firstAttribute="trailing" secondItem="Nsv-uC-hkP" secondAttribute="trailing" constant="96" id="BHH-eP-vpG"/>
+                                                <constraint firstItem="MoK-HU-aUB" firstAttribute="top" secondItem="Nsv-uC-hkP" secondAttribute="bottom" constant="42.670000000000002" id="EtG-Wg-5SQ"/>
                                                 <constraint firstAttribute="trailing" secondItem="MoK-HU-aUB" secondAttribute="trailing" constant="16" id="TSw-cv-KZ0"/>
-                                                <constraint firstAttribute="trailing" secondItem="Nsv-uC-hkP" secondAttribute="trailing" constant="102" id="jrZ-Bq-Mic"/>
+                                                <constraint firstItem="Nsv-uC-hkP" firstAttribute="leading" secondItem="wuJ-16-vwm" secondAttribute="leading" constant="96" id="YmT-ix-YxC"/>
+                                                <constraint firstItem="Nsv-uC-hkP" firstAttribute="top" secondItem="wuJ-16-vwm" secondAttribute="top" constant="215" id="ryk-SB-AhV"/>
                                                 <constraint firstAttribute="bottom" secondItem="MoK-HU-aUB" secondAttribute="bottom" constant="16" id="zsa-kv-s0U"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <color key="backgroundColor" systemColor="systemGray3Color"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <size key="customSize" width="387" height="606"/>
                                         <connections>
                                             <outlet property="slideDescriptionLbl" destination="Eqe-Dd-hIn" id="yRH-Hr-0Pe"/>
@@ -109,7 +106,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemGray3Color"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="qYU-JF-MS3" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="9dZ-4b-GiG"/>
                             <constraint firstItem="nbk-qf-9R2" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="CFm-d7-IsR"/>
@@ -131,7 +128,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2685" y="15"/>
+            <point key="canvasLocation" x="2684.7328244274809" y="14.788732394366198"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="yZD-K2-BHe">
@@ -241,14 +238,6 @@
             </objects>
             <point key="canvasLocation" x="3568.7022900763359" y="15.492957746478874"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="aYI-oG-gga">
-            <objects>
-                <viewController id="PRH-9c-X3c" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Hn3-fL-5xm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4588" y="-650"/>
-        </scene>
         <!--Profil-->
         <scene sceneID="C1W-Ty-Ziy">
             <objects>
@@ -298,14 +287,19 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="OD6-Wa-y0q">
-                                <rect key="frame" x="61" y="172" width="270" height="297"/>
+                                <rect key="frame" x="0.0" y="172" width="393" height="297"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="297" id="ZHe-Qf-RvO"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MvX-o6-m8m"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="lMU-sO-qVU" firstAttribute="top" secondItem="OD6-Wa-y0q" secondAttribute="bottom" constant="20" id="Fne-CA-PqH"/>
                             <constraint firstItem="Kqy-U0-uyE" firstAttribute="top" secondItem="lMU-sO-qVU" secondAttribute="bottom" constant="10" id="HQw-0F-7in"/>
@@ -315,8 +309,8 @@
                             <constraint firstItem="s5E-uo-jyY" firstAttribute="leading" secondItem="MvX-o6-m8m" secondAttribute="leading" constant="25" id="Rbv-gS-tHy"/>
                             <constraint firstItem="Kqy-U0-uyE" firstAttribute="leading" secondItem="MvX-o6-m8m" secondAttribute="leading" constant="16" id="WFy-jZ-8kh"/>
                             <constraint firstItem="MvX-o6-m8m" firstAttribute="trailing" secondItem="s5E-uo-jyY" secondAttribute="trailing" constant="16" id="hlW-sx-9Vx"/>
-                            <constraint firstItem="MvX-o6-m8m" firstAttribute="trailing" secondItem="OD6-Wa-y0q" secondAttribute="trailing" constant="62" id="kfV-Hc-NuB"/>
-                            <constraint firstItem="OD6-Wa-y0q" firstAttribute="leading" secondItem="MvX-o6-m8m" secondAttribute="leading" constant="61" id="nc4-hR-jRl"/>
+                            <constraint firstItem="MvX-o6-m8m" firstAttribute="trailing" secondItem="OD6-Wa-y0q" secondAttribute="trailing" id="kfV-Hc-NuB"/>
+                            <constraint firstItem="OD6-Wa-y0q" firstAttribute="leading" secondItem="MvX-o6-m8m" secondAttribute="leading" id="nc4-hR-jRl"/>
                             <constraint firstItem="MvX-o6-m8m" firstAttribute="trailing" secondItem="Kqy-U0-uyE" secondAttribute="trailing" constant="16" id="vsF-9M-nSV"/>
                             <constraint firstItem="OD6-Wa-y0q" firstAttribute="top" secondItem="s5E-uo-jyY" secondAttribute="bottom" constant="10" id="zps-aT-Haw"/>
                         </constraints>
@@ -430,7 +424,7 @@
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="wWQ-ru-HCF">
                                 <rect key="frame" x="0.0" y="103" width="393" height="56"/>
-                                <color key="barTintColor" systemColor="systemGray3Color"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="fAC-LK-7KC" id="1r5-SP-1hM"/>
@@ -438,8 +432,8 @@
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="300" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="TsQ-gT-cOd">
                                 <rect key="frame" x="0.0" y="159" width="393" height="610"/>
-                                <color key="backgroundColor" systemColor="systemGray2Color"/>
-                                <color key="sectionIndexBackgroundColor" name="Background"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HomePageTableViewCell" id="AZQ-vu-oQF" userLabel="HomePageTableViewCell" customClass="HomePageTableViewCell" customModule="News_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="300"/>
@@ -460,28 +454,35 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="American rescued from cave in Turkey and said to be doing well after more than a week trapped underground - CBS News" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9eS-Z5-iI4">
+                                                            <rect key="frame" x="8" y="8.0000000000000036" width="337" height="58.333333333333343"/>
+                                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oN5-Ep-aI0">
-                                                            <rect key="frame" x="8" y="203" width="337" height="67"/>
+                                                            <rect key="frame" x="8" y="202" width="337" height="68"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <string key="text">Cave expert Mark Dickey was hit with gastric pain last weekend while helping to chart the cave system, leaving him stuck more than 3,200 feet underground.</string>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="American rescued from cave in Turkey and said to be doing well after more than a week trapped underground - CBS News" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9eS-Z5-iI4">
-                                                            <rect key="frame" x="8" y="137.66666666666666" width="337" height="57.333333333333343"/>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="30"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstItem="oN5-Ep-aI0" firstAttribute="leading" secondItem="Pg9-hs-cHh" secondAttribute="leading" constant="8" id="1O2-2w-DKz"/>
-                                                        <constraint firstAttribute="trailing" secondItem="9eS-Z5-iI4" secondAttribute="trailing" constant="8" id="8Cg-0n-v9u"/>
-                                                        <constraint firstItem="oN5-Ep-aI0" firstAttribute="top" secondItem="9eS-Z5-iI4" secondAttribute="bottom" constant="8" id="NvT-si-mgq"/>
-                                                        <constraint firstAttribute="trailing" secondItem="oN5-Ep-aI0" secondAttribute="trailing" constant="8" id="Sz2-Kh-lQz"/>
-                                                        <constraint firstAttribute="bottom" secondItem="oN5-Ep-aI0" secondAttribute="bottom" constant="8" id="mL9-wi-o0i"/>
-                                                        <constraint firstItem="9eS-Z5-iI4" firstAttribute="leading" secondItem="Pg9-hs-cHh" secondAttribute="leading" constant="8" id="md5-hs-6ow"/>
+                                                        <constraint firstItem="oN5-Ep-aI0" firstAttribute="leading" secondItem="Pg9-hs-cHh" secondAttribute="leading" constant="8" id="Hd3-sg-6cF"/>
+                                                        <constraint firstAttribute="bottom" secondItem="oN5-Ep-aI0" secondAttribute="bottom" constant="8" id="Jov-X0-C0y"/>
+                                                        <constraint firstAttribute="trailing" secondItem="9eS-Z5-iI4" secondAttribute="trailing" constant="8" id="WI9-tJ-k4B"/>
+                                                        <constraint firstItem="9eS-Z5-iI4" firstAttribute="leading" secondItem="Pg9-hs-cHh" secondAttribute="leading" constant="8" id="XHw-WD-1N8"/>
+                                                        <constraint firstItem="9eS-Z5-iI4" firstAttribute="top" secondItem="Pg9-hs-cHh" secondAttribute="top" constant="8" id="YZM-dB-0GL"/>
+                                                        <constraint firstAttribute="trailing" secondItem="oN5-Ep-aI0" secondAttribute="trailing" constant="8" id="hfF-7Z-U2y"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -498,7 +499,7 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="Pg9-hs-cHh" secondAttribute="bottom" id="r48-RD-BHo"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="imgNew" destination="QgF-hn-4U0" id="HX8-fy-DKG"/>
                                             <outlet property="lblDescription" destination="oN5-Ep-aI0" id="LRs-2i-xH7"/>
@@ -596,7 +597,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="i25-pg-JEc"/>
-                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="i25-pg-JEc" firstAttribute="bottom" secondItem="TsQ-gT-cOd" secondAttribute="bottom" id="ATI-iT-BKq"/>
                             <constraint firstItem="wWQ-ru-HCF" firstAttribute="top" secondItem="i25-pg-JEc" secondAttribute="top" id="DUN-az-aW2"/>
@@ -637,7 +638,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="300" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="idZ-PL-0xV">
                                 <rect key="frame" x="0.0" y="59" width="393" height="710"/>
-                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SavePageTableViewCell" id="R73-eZ-XRt" customClass="SavePageTableViewCell" customModule="News_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="300"/>
@@ -658,31 +659,33 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSg-OR-dZN">
-                                                            <rect key="frame" x="8" y="203" width="337" height="67"/>
+                                                            <rect key="frame" x="8" y="202" width="337" height="68"/>
+                                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <string key="text">Cave expert Mark Dickey was hit with gastric pain last weekend while helping to chart the cave system, leaving him stuck more than 3,200 feet underground.</string>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="American rescued from cave in Turkey and said to be doing well after more than a week trapped underground - CBS News" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ez-2C-tVH">
-                                                            <rect key="frame" x="8" y="137.66666666666666" width="337" height="57.333333333333343"/>
+                                                            <rect key="frame" x="8" y="8.0000000000000036" width="337" height="58.333333333333343"/>
+                                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.49839610927152317" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="1ez-2C-tVH" secondAttribute="trailing" constant="8" id="15g-Sk-Op9"/>
+                                                        <constraint firstItem="1ez-2C-tVH" firstAttribute="leading" secondItem="OgO-mV-p7B" secondAttribute="leading" constant="8" id="3k8-F8-C4n"/>
                                                         <constraint firstItem="YL0-mq-GIz" firstAttribute="leading" secondItem="OgO-mV-p7B" secondAttribute="leading" id="5lo-Z5-Qg2"/>
                                                         <constraint firstAttribute="trailing" secondItem="YL0-mq-GIz" secondAttribute="trailing" id="91V-wt-Faj"/>
+                                                        <constraint firstAttribute="trailing" secondItem="1ez-2C-tVH" secondAttribute="trailing" constant="8" id="Abr-kM-kuk"/>
                                                         <constraint firstItem="YL0-mq-GIz" firstAttribute="top" secondItem="OgO-mV-p7B" secondAttribute="top" id="GJs-Zy-gdM"/>
                                                         <constraint firstAttribute="bottom" secondItem="mSg-OR-dZN" secondAttribute="bottom" constant="8" id="JbI-1h-0nm"/>
                                                         <constraint firstAttribute="trailing" secondItem="mSg-OR-dZN" secondAttribute="trailing" constant="8" id="Kcn-21-Jo9"/>
-                                                        <constraint firstItem="1ez-2C-tVH" firstAttribute="leading" secondItem="OgO-mV-p7B" secondAttribute="leading" constant="8" id="PQ4-Mb-6jM"/>
-                                                        <constraint firstItem="mSg-OR-dZN" firstAttribute="top" secondItem="1ez-2C-tVH" secondAttribute="bottom" constant="8" id="U6B-1x-bOh"/>
                                                         <constraint firstItem="mSg-OR-dZN" firstAttribute="leading" secondItem="OgO-mV-p7B" secondAttribute="leading" constant="8" id="q9g-XY-kf4"/>
                                                         <constraint firstAttribute="bottom" secondItem="YL0-mq-GIz" secondAttribute="bottom" id="v9c-OJ-hn2"/>
+                                                        <constraint firstItem="1ez-2C-tVH" firstAttribute="top" secondItem="OgO-mV-p7B" secondAttribute="top" constant="8" id="y4u-F2-Wxx"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -691,7 +694,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="OgO-mV-p7B" secondAttribute="bottom" id="9U9-nh-t5v"/>
                                                 <constraint firstItem="OgO-mV-p7B" firstAttribute="leading" secondItem="sNL-El-bgm" secondAttribute="leadingMargin" id="Frh-yQ-PXv"/>
@@ -699,7 +702,7 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="OgO-mV-p7B" secondAttribute="trailing" id="gM0-XJ-pX0"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="imgSaved" destination="YL0-mq-GIz" id="cOy-rH-kvB"/>
                                             <outlet property="lblSavedDescription" destination="mSg-OR-dZN" id="gBD-iy-hr8"/>
@@ -710,7 +713,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="d7w-UR-xFN"/>
-                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="d7w-UR-xFN" firstAttribute="trailing" secondItem="idZ-PL-0xV" secondAttribute="trailing" id="2Fs-XR-3tT"/>
                             <constraint firstItem="d7w-UR-xFN" firstAttribute="bottom" secondItem="idZ-PL-0xV" secondAttribute="bottom" id="Cht-LQ-vjj"/>
@@ -794,7 +797,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemGray3Color"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="3il-7y-Vtl" firstAttribute="leading" secondItem="IIT-oo-6Z6" secondAttribute="leading" constant="16" id="4Cb-Fc-hJg"/>
                                             <constraint firstItem="q2h-fC-Jkw" firstAttribute="leading" secondItem="IIT-oo-6Z6" secondAttribute="leading" constant="16" id="5eB-ce-IBw"/>
@@ -1023,17 +1026,11 @@
         <image name="search-filter" width="256" height="256"/>
         <image name="unsaved" width="128" height="128"/>
         <image name="world" width="265.5" height="504"/>
-        <namedColor name="Background">
-            <color red="0.88200002908706665" green="0.82400000095367432" blue="0.7369999885559082" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGray3Color">
-            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

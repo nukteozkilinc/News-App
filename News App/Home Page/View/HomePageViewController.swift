@@ -66,6 +66,9 @@ extension HomePageViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        
+        newsTableView.deselectRow(at: indexPath, animated: true)
+        
         viewModel.articleDetail = viewModel.articles[indexPath.row]
         viewModel.goToDetailPage()
     }

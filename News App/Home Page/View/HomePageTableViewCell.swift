@@ -11,18 +11,10 @@ class HomePageTableViewCell: UITableViewCell {
     
     lazy var viewmodel: HomePageViewModelInterface = HomePageViewModel()
     
-    @IBOutlet weak var lblTitle: UILabel! {
-        didSet {
-            lblTitle.textColor = .white
-        }
-    }
+    @IBOutlet weak var lblTitle: UILabel!
     
-    @IBOutlet weak var lblDescription: UILabel! {
-        didSet {
-            lblDescription.textColor = .lightGray
-        }
-    }
-
+    @IBOutlet weak var lblDescription: UILabel!
+    
     @IBOutlet weak var imgNew: UIImageView!
     
     override func awakeFromNib() {

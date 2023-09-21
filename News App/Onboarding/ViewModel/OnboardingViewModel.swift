@@ -46,7 +46,7 @@ extension OnboardingViewModel: OnboardingViewModelInterface{
     
     
     func fetchData() {
-        slides = [OnboardingSlide(title: "WELCOME!", description: "Haber uygulamasina hosgeldiniz.", image: UIImage(named: "news-reporter")!),OnboardingSlide(title: "GUNCEL HABERLER", description: "Burada guncel haberleri aninda cebinizde sahip olabilirsiniz.", image: UIImage(named: "update-news")!),OnboardingSlide(title: "KAYDET", description: "Kaydedilen haberleri daha sonra istediginizde tekrar ulasabilirsiniz.", image: UIImage(named: "click-save")!),OnboardingSlide(title: "ARAMA&KATEGORI", description: "Guncel haberler icerisinde arama ve katagori kismi ile haberlerinizi guncellestirebilirsiniz!", image: UIImage(named: "search-filter")!)]
+        slides = [OnboardingSlide(title: "WELCOME!", description: "Welcome to the NewsPulse.", image: UIImage(named: "news-reporter")!),OnboardingSlide(title: "LATEST NEWS", description: "Here you can have the latest news instantly in your pocket.", image: UIImage(named: "update-news")!),OnboardingSlide(title: "SAVE", description: "You can access the saved news later whenever you want.", image: UIImage(named: "click-save")!),OnboardingSlide(title: "SEARCH&FILTER", description: "You can update your news with the search and category sections within the current news!", image: UIImage(named: "search-filter")!)]
     }
     
     func viewDidLoad() {
