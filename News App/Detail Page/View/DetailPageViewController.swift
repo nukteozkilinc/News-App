@@ -9,6 +9,9 @@ import UIKit
 
 protocol DetailPageViewInterface: AnyObject {
     
+    var article: Articles? { get set }
+    
+    func resizeImage(imageName: String)
 }
 
 class DetailPageViewController: UIViewController {
@@ -18,17 +21,7 @@ class DetailPageViewController: UIViewController {
     var newsList: [Articles] = []
     
     
-    @IBOutlet weak var btnSave: UIButton! {
-        didSet {
-            if article?.isLiked == false {
-                if let originalImage = UIImage(named: "unsaved") {
-                    // Resize the image
-                    let resizedImage = originalImage.scaleImage(toSize: CGSize(width: 70, height: 70))
-                    btnSave.setImage(resizedImage, for: .normal)
-                }
-            }
-        }
-    }
+    @IBOutlet weak var btnSave: UIButton!
     
     @IBOutlet weak var imgNewsDetail: UIImageView! {
         didSet {
@@ -79,51 +72,22 @@ class DetailPageViewController: UIViewController {
         }
         
         for savedNews in newsList {
-            
-            if savedNews.title == article?.title {
-                article?.isLiked = true
-                if let originalImage = UIImage(named: "saved") {
-                    // Resize the image
-                    let resizedImage = originalImage.scaleImage(toSize: CGSize(width: 70, height: 70))
-                    btnSave.setImage(resizedImage, for: .normal)
-                }
-            }else {
-                article?.isLiked = false
-                    if let originalImage = UIImage(named: "unsaved") {
-                        // Resize the image
-                        let resizedImage = originalImage.scaleImage(toSize: CGSize(width: 70, height: 70))
-                        btnSave.setImage(resizedImage, for: .normal)
-                }
-            }
+            viewModel.checkSavedNews(savedNews: savedNews)
         }
     }
     
     @IBAction func pressedSave(_ sender: UIButton) {
-        
-        if article?.isLiked == false || article?.isLiked == nil {
-            if let originalImage = UIImage(named: "saved") {
-                // Resize the image
-                let resizedImage = originalImage.scaleImage(toSize: CGSize(width: 70, height: 70))
-                btnSave.setImage(resizedImage, for: .normal)
-            }
-            article?.isLiked = true
-            viewModel.savedNews(article: article)
-            
-        } else {
-            if let originalImage = UIImage(named: "unsaved") {
-                // Resize the image
-                let resizedImage = originalImage.scaleImage(toSize: CGSize(width: 70, height: 70))
-                btnSave.setImage(resizedImage, for: .normal)
-            }
-            article?.isLiked = false
-            viewModel.deleteNews(article: article)
-            
-        }
-        
+        viewModel.setImage()
     }
-    
 }
 
 extension DetailPageViewController: DetailPageViewInterface {
+    
+    func resizeImage(imageName: String) {
+        if let originalImage = UIImage(named: imageName) {
+            let resizedImage = originalImage.scaleImage(toSize: CGSize(width: 70, height: 70))
+            btnSave.setImage(resizedImage, for: .normal)
+        }
+    }
     
 }

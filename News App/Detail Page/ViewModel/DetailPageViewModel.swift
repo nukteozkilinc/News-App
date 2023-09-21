@@ -11,22 +11,25 @@ protocol DetailPageViewModelInterface {
     var view: DetailPageViewInterface? { get set }
     func savedNews(article: Articles?)
     func deleteNews(article: Articles?)
+    func setImage()
+    func checkSavedNews(savedNews: Articles?)
     func fetchDetailImage(url: URL, completion: ((UIImage?) -> Void)?)
 }
 
-class DetailPageViewModel {
+final class DetailPageViewModel {
     weak var view: DetailPageViewInterface?
 }
 
 extension DetailPageViewModel: DetailPageViewModelInterface {
     func deleteNews(article: Articles?) {
-        DatabaseManager.shared.deleteNews(news: article!)
+        DatabaseManager.shared.deleteNews(news: (view?.article!)!)
     }
     
     func savedNews(article: Articles?) {
         
-        //MARK: Optionallari duzelt
-        DatabaseManager.shared.saveNews(author: (article?.author)!, content: (article?.content)!, description: (article?.description)!, publishedAt: (article?.publishedAt)!, title: (article?.title)!, urlToImage: (article?.urlToImage)!)
+        if let savedArticle = view?.article {
+            DatabaseManager.shared.saveNews(author: savedArticle.author ?? "Removed", content: savedArticle.content ?? "Removed", description: savedArticle.description ?? "Removed", publishedAt: savedArticle.publishedAt ?? "Removed", title: savedArticle.title ?? "Removed", urlToImage: (savedArticle.urlToImage ?? URL(string: "https://cdn.w600.comps.canstockphoto.com/removed-rubber-stamp-vector-clipart_csp43352204.jpg"))!)
+        }
     }
     
     func fetchDetailImage(url: URL, completion: ((UIImage?) -> Void)?) {
@@ -37,6 +40,29 @@ extension DetailPageViewModel: DetailPageViewModelInterface {
                     completion?(image)
                 }
             }
+        }
+    }
+    
+    func setImage() {
+        
+        if view?.article?.isLiked == false || view?.article?.isLiked == nil {
+            view?.resizeImage(imageName: "saved")
+            view?.article?.isLiked = true
+            savedNews(article: view?.article)
+        } else {
+            view?.resizeImage(imageName: "unsaved")
+            view?.article?.isLiked = false
+            deleteNews(article: view?.article)
+        }
+    }
+    
+    func checkSavedNews(savedNews: Articles?) {
+        if savedNews?.title == view?.article?.title {
+            view?.article?.isLiked = true
+            view?.resizeImage(imageName: "saved")
+        }else {
+            view?.article?.isLiked = false
+                view?.resizeImage(imageName: "unsaved")
         }
     }
 }
