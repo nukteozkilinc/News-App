@@ -9,8 +9,6 @@ import UIKit
 
 class HomePageTableViewCell: UITableViewCell {
     
-    
-    @IBOutlet weak var pressedSave: UIButton!
     lazy var viewmodel: HomePageViewModelInterface = HomePageViewModel()
     
     @IBOutlet weak var lblTitle: UILabel! {

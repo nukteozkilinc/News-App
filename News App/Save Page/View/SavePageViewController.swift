@@ -49,6 +49,16 @@ extension SavePageViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.lblSavedTitle.text = viewmodel.newsList[indexPath.row].title
         cell.lblSavedDescription.text = viewmodel.newsList[indexPath.row].description
+        
+        if let urlToImg = viewmodel.newsList[indexPath.row].urlToImage {
+            DispatchQueue.global().async {
+                if let data = try? Data(contentsOf: urlToImg) {
+                    DispatchQueue.main.async {
+                        cell.imgSaved.image = UIImage(data: data)
+                    }
+                }
+            }
+        }
         return cell
     }
     
