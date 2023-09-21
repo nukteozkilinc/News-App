@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import RxSwift
 import CoreData
 
 class DatabaseManager {
@@ -16,8 +15,7 @@ class DatabaseManager {
     static let shared = DatabaseManager()
     
     func saveNews(author: String, content: String, description: String, publishedAt: String, title: String, urlToImage: URL) {
-        //let news = NewsModel(context: context)
-        
+      
         let entity = NSEntityDescription.entity(forEntityName: "NewsModel", in: context)
         let news = NSManagedObject(entity: entity!, insertInto: context)
         

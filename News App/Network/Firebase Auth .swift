@@ -26,8 +26,8 @@ final class FirebaseAuth {
                     print("Sign in")
                     // MARK: Buraya nav ekle!
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                            let newsDetailVC = storyboard.instantiateViewController(withIdentifier: "TabBarViewController") as! TabBarViewController
-                            
+                    let newsDetailVC = storyboard.instantiateViewController(withIdentifier: "TabBarViewController") as! TabBarViewController
+                    
                     newsDetailVC.navigationItem.hidesBackButton = true
                     vc.navigationController?.pushViewController(newsDetailVC, animated: true)
                 }
@@ -49,12 +49,16 @@ final class FirebaseAuth {
         if let email, let password {
             Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                 if let error {
-                    Alerts.shared.presentAlert(on: vc, with: "HATA!", message: "Bir seyler hatali", options: "OK") { _ in
+                    Alerts.shared.presentAlert(on: vc, with: "FAILED", message: String(error.localizedDescription), options: "OK") { _ in
                         print(error.localizedDescription)
                     }
                 }else {
-                    Alerts.shared.presentAlert(on: vc, with: "Kullanici kaydedildi!", message: "Basarili bir sekilde kayit olundu", options: "OK") { _ in
+                    Alerts.shared.presentAlert(on: vc, with: "Success", message: "User has registered successfully", options: "OK") { _ in
                         // MARK: Perform to main screen
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let newsDetailVC = storyboard.instantiateViewController(withIdentifier: "TabBarViewController") as! TabBarViewController
+                        
+                        vc.navigationController?.pushViewController(newsDetailVC, animated: true)
                     }
                 }
             }

@@ -31,6 +31,7 @@ final class PasswordPageViewController: UIViewController {
         
         if let currentPassword = txtCurrentPassword?.text, let newPassword = txtNewPassword?.text {
             viewModel.changePassword(currentPassword: currentPassword, newPassword: newPassword)
+            self.dismiss(animated: true)
         }
     }
 }

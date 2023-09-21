@@ -12,8 +12,6 @@ class RegisterPageViewController: UIViewController {
     @IBOutlet weak var registerTfMail: UITextField!
     @IBOutlet weak var registerTfPassword: UITextField!
     
-    lazy var viewmodel: RegisterViewModelProtocol = RegisterViewModel()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,9 +20,7 @@ class RegisterPageViewController: UIViewController {
     @IBAction func pressedRegister(_sender: UIButton) {
         
         if let mail = registerTfMail.text, let password = registerTfPassword.text {
-            viewmodel.registerUser(email: mail, password: password)
+            FirebaseAuth.shared.register(email: mail, password: password, vc: self)
         }
-        
     }
-    
 }
