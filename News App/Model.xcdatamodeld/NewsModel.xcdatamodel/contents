@@ -7,5 +7,6 @@
         <attribute name="isLiked" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="publishedAt" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="urlToImage" optional="YES" attributeType="Transformable"/>
     </entity>
 </model>

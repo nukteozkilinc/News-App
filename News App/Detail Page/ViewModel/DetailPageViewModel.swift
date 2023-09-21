@@ -24,7 +24,7 @@ extension DetailPageViewModel: DetailPageViewModelInterface {
     }
     
     func savedNews(article: Articles?) {
-        DatabaseManager.shared.saveNews(author: (article?.author)!, content: (article?.content)!, description: (article?.description)!, publishedAt: (article?.publishedAt)!, title: (article?.title)!)
+        DatabaseManager.shared.saveNews(author: (article?.author)!, content: (article?.content)!, description: (article?.description)!, publishedAt: (article?.publishedAt)!, title: (article?.title)!, urlToImage: (article?.urlToImage)!)
     }
     
 }

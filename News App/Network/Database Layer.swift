@@ -15,7 +15,7 @@ class DatabaseManager {
     
     static let shared = DatabaseManager()
     
-    func saveNews(author: String, content: String, description: String, publishedAt: String, title: String) {
+    func saveNews(author: String, content: String, description: String, publishedAt: String, title: String, urlToImage: URL) {
         //let news = NewsModel(context: context)
         
         let entity = NSEntityDescription.entity(forEntityName: "NewsModel", in: context)
@@ -27,6 +27,7 @@ class DatabaseManager {
         news.setValue(publishedAt, forKey: "publishedAt")
         news.setValue(true, forKey: "isLiked")
         news.setValue(description, forKey: "descrip")
+        news.setValue(urlToImage, forKey: "urlToImage")
         
         appDelegate.saveContext()
     }
@@ -62,6 +63,7 @@ class DatabaseManager {
                     author: (data.value(forKey: "author") as! String),
                     title: (data.value(forKey: "title") as! String),
                     description: (data.value(forKey: "descrip") as! String),
+                    urlToImage: (data.value(forKey: "urlToImage") as! URL),
                     publishedAt: (data.value(forKey: "publishedAt") as! String),
                     content: (data.value(forKey: "content") as! String),
                     isLiked: (data.value(forKey: "isLiked") as! Bool)

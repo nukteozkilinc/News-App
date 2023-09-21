@@ -19,7 +19,7 @@ class HomePageTableViewCell: UITableViewCell {
     
     @IBOutlet weak var lblDescription: UILabel! {
         didSet {
-            lblDescription.textColor = .white
+            lblDescription.textColor = .lightGray
         }
     }
 
