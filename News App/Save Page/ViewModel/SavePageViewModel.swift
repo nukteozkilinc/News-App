@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol SavePageViewModelInterface {
     var view: SavePageViewInterface? { get set }
@@ -16,7 +17,6 @@ protocol SavePageViewModelInterface {
 
 class SavePageViewModel {
     var view: SavePageViewInterface?
-    //var newsList = BehaviorSubject<[NewsModel]>(value: [NewsModel]())
     var newsList: [Articles] = []
 }
 

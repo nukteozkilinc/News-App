@@ -11,6 +11,7 @@ protocol DetailPageViewModelInterface {
     var view: DetailPageViewInterface? { get set }
     func savedNews(article: Articles?)
     func deleteNews(article: Articles?)
+    func fetchDetailImage(url: URL, completion: ((UIImage?) -> Void)?)
 }
 
 class DetailPageViewModel {
@@ -19,7 +20,6 @@ class DetailPageViewModel {
 
 extension DetailPageViewModel: DetailPageViewModelInterface {
     func deleteNews(article: Articles?) {
-        //article?.isLiked = true
         DatabaseManager.shared.deleteNews(news: article!)
     }
     
@@ -29,4 +29,14 @@ extension DetailPageViewModel: DetailPageViewModelInterface {
         DatabaseManager.shared.saveNews(author: (article?.author)!, content: (article?.content)!, description: (article?.description)!, publishedAt: (article?.publishedAt)!, title: (article?.title)!, urlToImage: (article?.urlToImage)!)
     }
     
+    func fetchDetailImage(url: URL, completion: ((UIImage?) -> Void)?) {
+        DispatchQueue.global().async {
+            if let data = try? Data(contentsOf: url) {
+                let image = UIImage(data: data)
+                DispatchQueue.main.async {
+                    completion?(image)
+                }
+            }
+        }
+    }
 }

@@ -10,14 +10,14 @@ import UIKit
 protocol HomePageViewInterface: AnyObject {
     func reloadTableView()
     func goToDetailPage(identifier: String, selectedArticle: Articles)
+    func manageMenuSize(categorySide: Bool)
 }
 
 class HomePageViewController: UIViewController{
     
-    @IBOutlet weak var trailingOfView: NSLayoutConstraint!
-
-    var categorySide = false
     private lazy var viewModel:HomePageViewModelInterface = HomePageViewModel()
+    
+    @IBOutlet weak var trailingOfView: NSLayoutConstraint!
     
     @IBOutlet weak var newsTableView: UITableView! {
         didSet {
@@ -29,22 +29,12 @@ class HomePageViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         viewModel.view = self
         viewModel.fetchNews()
-        
     }
     
     @IBAction func pressedFilter(_ sender: UIBarButtonItem) {
-        if (categorySide) {
-            trailingOfView.constant = 393
-            UIView.animate(withDuration: 0.3, delay: 0.1, options: .curveEaseIn, animations: {
-                self.view.layoutIfNeeded()
-            })
-        } else {
-            trailingOfView.constant = 0
-        }
-        categorySide = !categorySide
+        viewModel.manageMenu()
     }
     
     @IBAction func pressedGeneral(_ sender: UIButton) {
@@ -54,7 +44,6 @@ class HomePageViewController: UIViewController{
     @IBAction func pressedBusiness(_ sender: UIButton) {
         viewModel.filterNews(category: "business")
     }
-    
 }
 
 extension HomePageViewController: UITableViewDelegate, UITableViewDataSource{
@@ -68,17 +57,11 @@ extension HomePageViewController: UITableViewDelegate, UITableViewDataSource{
         cell.lblTitle.text = viewModel.articles[indexPath.row].title
         cell.lblDescription.text = viewModel.articles[indexPath.row].description
         
-        //MARK: SOR! RESIMLER DEGISIYOR
         if let urlToImage = viewModel.articles[indexPath.row].urlToImage {
-             //let url = URL(string: urlToImage)
-                    DispatchQueue.global().async {
-                        if let data = try? Data(contentsOf: urlToImage) {
-                            DispatchQueue.main.async {
-                                cell.imgNew.image = UIImage(data: data)
-                            }
-                        }
-                    }
-                }
+            viewModel.fetchImages(url: urlToImage) { img in
+                cell.imgNew.image = img
+            }
+        }
         return cell
     }
     
@@ -104,6 +87,17 @@ extension HomePageViewController: HomePageViewInterface{
     
     func reloadTableView() {
         newsTableView.reloadData()
+    }
+    
+    func manageMenuSize(categorySide: Bool) {
+        if (categorySide) {
+            trailingOfView.constant = 393
+            UIView.animate(withDuration: 0.3, delay: 0.1, options: .curveEaseIn, animations: {
+                self.view.layoutIfNeeded()
+            })
+        } else {
+            trailingOfView.constant = 0
+        }
     }
 }
 

@@ -17,37 +17,25 @@ final class ProfilePageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.view = self
         
         navigationItem.hidesBackButton = true
     }
     
-    
-    @IBAction func pressedChangePassword(_ sender: UIButton) {
-      
-    }
+    @IBAction func pressedChangePassword(_ sender: UIButton) {}
     
     
     @IBAction func pressedLogout(_ sender: UIButton) {
         viewModel.userLogout()
-        viewModel.goToLogin()
-        //self.navigationController?.popToRootViewController(animated: true)
-        
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        let viewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-        
-        navigationController?.pushViewController(viewController, animated: true)
     }
 }
 
 extension ProfilePageViewController: ProfilePageViewInterface {
+    
     func editRootViewController() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
         let viewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-//        UIApplication.shared.windows.first?.rootViewController = viewController
-//        UIApplication.shared.windows.first?.makeKeyAndVisible()
         
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }

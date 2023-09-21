@@ -19,7 +19,7 @@ final class FirebaseAuth {
             Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
                 if let error {
                     // MARK: Buraya alert ekle!
-                    Alerts.shared.presentAlert(on: vc, with: "Sifre ya da kullanici adi yanlis", message: "Bilgilerinizi kontrol edip tekrar giriniz.", options: "OK") {_ in
+                    Alerts.shared.presentAlert(on: vc, with: "Password or user name is wrong", message: "Please check your user name or password and try again.", options: "OK") {_ in
                         print(error.localizedDescription)
                     }
                 } else {
@@ -60,4 +60,24 @@ final class FirebaseAuth {
             }
         }
     }
+//    func register(email: String?, password: String?, vc: UIViewController) {
+//        
+//        if let email, let password {
+//            Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+//                if let error {
+//                    Alerts.shared.presentAlert(on: vc, with: "FAILED!", message: String(error.localizedDescription), options: "OK") { _ in
+//                        print(error.localizedDescription)
+//                    }
+//                }else {
+//                    Alerts.shared.presentAlert(on: vc, with: "SAVED!", message: "User saved successfully", options: "OK") { _ in
+//                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//                        let newsDetailVC = storyboard.instantiateViewController(withIdentifier: "TabBarViewController") as! TabBarViewController
+//
+//                        newsDetailVC.navigationItem.hidesBackButton = true
+//                        vc.navigationController?.pushViewController(newsDetailVC, animated: true)
+//                    }
+//                }
+//            }
+//        }
+//    }
 }

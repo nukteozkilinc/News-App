@@ -32,16 +32,11 @@ class DetailPageViewController: UIViewController {
     
     @IBOutlet weak var imgNewsDetail: UIImageView! {
         didSet {
-            if let urlToImage = article!.urlToImage {
-                 //let url = URL(string: urlToImage)
-                        DispatchQueue.global().async {
-                            if let data = try? Data(contentsOf: urlToImage) {
-                                DispatchQueue.main.async {
-                                    self.imgNewsDetail.image = UIImage(data: data)
-                                }
-                            }
-                        }
-                    }
+            if let image = article?.urlToImage {
+                viewModel.fetchDetailImage(url: image) { [self] img in
+                    imgNewsDetail.image = img
+                }
+            }
         }
     }
     @IBOutlet weak var lblNewsDetailTitle: UILabel! {

@@ -11,14 +11,11 @@ import UIKit
 protocol ProfilePageViewModelInterface {
     var view: ProfilePageViewInterface? { get set }
     func userLogout()
-    func goToLogin()
 }
 
 
 final class ProfilePageViewModel {
     var view: ProfilePageViewInterface?
-    var currentPassword: String?
-    var newPassword: String?
 }
 
 extension ProfilePageViewModel: ProfilePageViewModelInterface {
@@ -30,13 +27,9 @@ extension ProfilePageViewModel: ProfilePageViewModelInterface {
             UserDefaults.standard.set(false, forKey: "isLogin")
             UserDefaults.standard.synchronize()
             
+            view?.editRootViewController()
         } catch let signOutError as NSError {
             print("Error signing out: %@", signOutError)
         }
-    }
-    
-    func goToLogin() {
-        view?.editRootViewController()
-        
     }
 }

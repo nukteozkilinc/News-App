@@ -11,17 +11,21 @@ protocol HomePageViewModelInterface{
     var view: HomePageViewInterface? { get set }
     var articles: [Articles] { get set }
     var articleDetail: Articles? { get set }
+    var categorySide: Bool { get set }
+    
     func fetchNews()
-    func fetchImages(article: Articles)
+    func fetchImages(url : URL, completion: ((UIImage?) -> Void)?)
     func goToDetailPage()
     func searchNews(search: String)
     func filterNews(category: String)
+    func manageMenu()
 }
 
 final class HomePageViewModel {
     weak var view: HomePageViewInterface?
     var articles: [Articles] = []
     var articleDetail: Articles?
+    var categorySide: Bool = false
 }
 
 extension HomePageViewModel: HomePageViewModelInterface {
@@ -75,8 +79,19 @@ extension HomePageViewModel: HomePageViewModelInterface {
         }
     }
     
-    func fetchImages(article: Articles){
-        //NetworkManager.shared.downloadImage(from: article.urlToImage!)
-     
+    func fetchImages(url : URL, completion: ((UIImage?) -> Void)?) {
+        DispatchQueue.global().async {
+            if let data = try? Data(contentsOf: url) {
+                let image = UIImage(data: data)
+                DispatchQueue.main.async {
+                    completion?(image)
+                }
+            }
+        }
+    }
+    
+    func manageMenu() {
+        view?.manageMenuSize(categorySide: categorySide)
+        categorySide = !categorySide
     }
 }

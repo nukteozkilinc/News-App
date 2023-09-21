@@ -18,6 +18,7 @@
 		8B27E3592AAF42B0000C69E6 /* SourceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E3582AAF42B0000C69E6 /* SourceModel.swift */; };
 		8B27E35B2AAF42E4000C69E6 /* Articles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E35A2AAF42E4000C69E6 /* Articles.swift */; };
 		8B27E35D2AAF434E000C69E6 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E35C2AAF434E000C69E6 /* News.swift */; };
+		8B46FC8B2ABBDD5E0032551E /* PasswordPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B46FC8A2ABBDD5E0032551E /* PasswordPageViewModel.swift */; };
 		8B4C59EF2AB8425800BAAE34 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8B4C59EE2AB8425800BAAE34 /* RxSwift */; };
 		8B4C59F12AB8432000BAAE34 /* SavePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4C59F02AB8432000BAAE34 /* SavePageViewController.swift */; };
 		8B4C59F62AB8438100BAAE34 /* SavePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4C59F52AB8438100BAAE34 /* SavePageViewModel.swift */; };
@@ -59,6 +60,7 @@
 		8B27E3582AAF42B0000C69E6 /* SourceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceModel.swift; sourceTree = "<group>"; };
 		8B27E35A2AAF42E4000C69E6 /* Articles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Articles.swift; sourceTree = "<group>"; };
 		8B27E35C2AAF434E000C69E6 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		8B46FC8A2ABBDD5E0032551E /* PasswordPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordPageViewModel.swift; sourceTree = "<group>"; };
 		8B4C59F02AB8432000BAAE34 /* SavePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavePageViewController.swift; sourceTree = "<group>"; };
 		8B4C59F52AB8438100BAAE34 /* SavePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavePageViewModel.swift; sourceTree = "<group>"; };
 		8B55A6942AB10A5E006796C9 /* HomePageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageTableViewCell.swift; sourceTree = "<group>"; };
@@ -186,6 +188,14 @@
 			path = "Home Page";
 			sourceTree = "<group>";
 		};
+		8B46FC8C2ABBE3D80032551E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8B46FC8A2ABBDD5E0032551E /* PasswordPageViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		8B4C59F22AB8434400BAAE34 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -265,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				8B6479792ABB178B00B15F42 /* View */,
+				8B46FC8C2ABBE3D80032551E /* ViewModel */,
 			);
 			path = "Password Page";
 			sourceTree = "<group>";
@@ -485,6 +496,7 @@
 				8BEA83152AA8A11B00BEC145 /* SceneDelegate.swift in Sources */,
 				8BBD74912AB5C75000777A9D /* Alerts.swift in Sources */,
 				8B27E3522AAEFE15000C69E6 /* HomePageViewController.swift in Sources */,
+				8B46FC8B2ABBDD5E0032551E /* PasswordPageViewModel.swift in Sources */,
 				8B27E3542AAEFE24000C69E6 /* HomePageViewModel.swift in Sources */,
 				8B64720B2AB8AC6300FFF774 /* Model.xcdatamodeld in Sources */,
 				8B9A015E2AB5085500317C77 /* Firebase Auth .swift in Sources */,

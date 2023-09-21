@@ -33,17 +33,17 @@ extension EndPoint: EndpointProtocol {
         switch self {
         case .getNews:
             return [
-                "apiKey": "9c2599ed481540eabb89e3ee3a6df327",
+                "apiKey": "dc2e3e80467748aba70f9420250da9f6",
                 "country":"us"
             ]
         case .searchNews:
             return [
-                "apiKey": "9c2599ed481540eabb89e3ee3a6df327",
+                "apiKey": "dc2e3e80467748aba70f9420250da9f6",
                 "country":"us"
             ]
         case .filterNews:
             return [
-                "apiKey": "9c2599ed481540eabb89e3ee3a6df327",
+                "apiKey": "dc2e3e80467748aba70f9420250da9f6",
                 "country":"us"
             ]
         }

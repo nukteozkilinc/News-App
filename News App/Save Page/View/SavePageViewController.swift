@@ -24,13 +24,10 @@ class SavePageViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-
         super.viewDidLoad()
         
         navigationItem.rightBarButtonItem?.isHidden = true
         viewmodel.view = self
-        viewmodel.fetchSavedNews()
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -61,14 +58,10 @@ extension SavePageViewController: UITableViewDelegate, UITableViewDataSource {
         }
         return cell
     }
-    
-    
 }
 
 extension SavePageViewController: SavePageViewInterface {
     func reloadSaveTableView() {
         savedNewsTableView.reloadData()
     }
-    
-    
 }
