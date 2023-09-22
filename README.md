@@ -20,6 +20,9 @@ Login Page :
 
 ![Simulator Screen Shot - iPhone 14 Pro - 2023-09-21 at 21 05 59](https://github.com/nukteozkilinc/News-App/assets/63263623/8201e766-1628-4bfd-a02d-73dfd0765c66)
 
+![test](https://github.com/favicon.ico)
+<img src="https://github.com/favicon.ico" width="48">
+
 
 In the application, news data is fetched using Alamofire and saved using Core Data with a 'save' button. The application consists of three screens in total. On the main screen, news can be searched using a search bar, and news can be filtered using a side menu. The saved news is displayed on a separate screen
 
